@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px;
+            bottom: 0;
+            left: -250px;
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+
+        .menu-btn {
+            background-color: white;
+            color: #333;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Law</li>
+            <li onclick="showCourse('course2')">Criminal Justice</li>
+            <li onclick="showCourse('course3')">Public Policy</li>
+            <li onclick="showCourse('course4')">Human Rights</li>
+            <li onclick="showCourse('course5')">Environmental Policy and Management</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Law & Public Policies</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img
+                src="https://cdn.gminsights.com/image/rd/sustainable-and-smart-technologies/legal-services-market%202023-2032.jpg"><br><br>
+            <img
+                src="https://cdn.gminsights.com/image/rd/sustainable-and-smart-technologies/legal-services-market-size-by-services-2023-2032%20.webp">
+        </div>
+        <div id="course1" class="course">
+            <h1>Law</h1>
+            <p>The Law program offers comprehensive education and training for individuals seeking to pursue careers in
+                the legal field.
+                The curriculum spans core legal subjects, specialized areas, and practical experiences to develop
+                essential legal skills.
+                Students gain expertise in constitutional law, contracts, property law, civil procedure, criminal law,
+                and legal writing,
+                with opportunities to specialize in areas such as corporate law, environmental law, human rights law,
+                intellectual property law,
+                and international law. Practical experiences such as moot court, internships, clinical work, and
+                international moot courts enhance students'
+                advocacy and legal research capabilities.</p>
+            <img src="https://assets.ltkcontent.com/images/99697/public-policy-examples_920ac3cf0f.webp" alt="Course 1"
+                class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Juris Doctor (J.D.)</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A bachelor’s degree from an accredited institution.</li><br>
+                        <li>Minimum GPA requirement, typically around 3.0 on a 4.0 scale.</li><br>
+                        <li>LSAT (Law School Admission Test) scores.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Laws (LL.M.) in International Law</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A first degree in law (LL.B. or equivalent) from an accredited institution.</li><br>
+                        <li>Minimum GPA requirement, typically around 3.0 on a 4.0 scale.</li><br>
+                        <li>A current resume or curriculum vitae.</li><br>
+                        <li>Usually, two or three letters of recommendation.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Certificate in Intellectual Property</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Bachelor's degree from an accredited institution, preferably in law, science,
+                            engineering, or related fields. A Juris Doctor (J.D.) or equivalent law degree may be
+                            required for legal professionals.</li><br>
+                        <li>Relevant work experience in law, intellectual property, or a related field may be required
+                            or preferred.</li><br>
+                        <li>Completed application form, official transcripts, resume/CV, letters of recommendation,
+                            personal statement, and possibly an interview.</li>
+                    </ul>
+                    </p>
+                </li>
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b>₹35,00,000 - ₹67,50,000 per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b>₹50,00,000 - ₹1,12,50,000 per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹85,00,000 - ₹1,87,50,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.nls.ac.in/" style="color:blue">National Law School of India University (NLSIU),
+                        Bangalore</a></li>
+                <br>
+                <li><a href="http://www.nludelhi.ac.in/" style="color:blue">National Law University (NLU), Delhi</a>
+                </li>
+                <br>
+                <li><a href="https://www.gnlu.ac.in/" style="color:blue">Gujarat National Law University (GNLU),
+                        Gandhinagar</a>
+                </li><br>
+                <li><a href="https://www.nujs.edu/" style="color:blue">West Bengal National University of Juridical
+                        Sciences (WBNUJS), Kolkata</a>
+                </li>
+            </ul>
+            <a href="https://www.shiksha.com/law/ranking/top-law-colleges-in-india/56-2-0-0-0" class="button"><i>For
+                    more information...</i></a>
+        </div>
+        <div id="course2" class="course">
+            <h1>Criminal Justice</h1>
+            <p>The degree in Criminal Justice provides a comprehensive overview of the
+                criminal justice system, including law enforcement, the court system, and corrections.
+                The curriculum includes courses in criminology, criminal law, forensic science, criminal procedure,
+                and juvenile justice. Students will develop critical thinking and analytical skills, and gain practical
+                experience
+                through internships and fieldwork.</p>
+            <img src="https://media.istockphoto.com/id/1007059968/photo/woman-forensic-expert-collects-evidence-at-the-crime-scene.jpg?b=1&s=612x612&w=0&k=20&c=Vg_O-mobtJiFIz-RRHRtdLpJ0UGhAyr-cvVSQNk4-uw="
+                alt="Course 2" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Criminal Justice</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Preferably with a strong academic record, particularly in subjects like social studies,
+                            history, and English.</li><br>
+
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Criminology</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A bachelor's degree from an accredited institution.Preferred fields of
+                            study include criminology, criminal justice, sociology, psychology, or related social
+                            sciences.</li><br>
+                        <li>A minimum Grade Point Average (GPA) as required by the institution, typically around 3.0 on
+                            a 4.0 scale.</li><br>
+                        <li>For non-native English speakers, proof of English language proficiency through tests such as
+                            TOEFL or IELTS is required.
+                        </li><br>
+                        <li>Usually, two or three letters of recommendation from academic or professional references.
+                        </li><br>
+                        <li>A current resume or curriculum vitae highlighting academic and professional achievements.
+                        </li><br>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Certificate in Forensic Science</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Minimum GPA requirement varies by program.</li><br>
+                        <li>A written statement outlining interest in forensic science.</li><br>
+                        <li>Preferred or required background in science or criminal justice</li>
+                    </ul>
+                    </p>
+                </li>
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3,50,000 - ₹5,50,000 per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6,00,000 - ₹12,00,000 per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹12,00,000 - ₹25,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.tiss.edu/" style="color:blue">Tata Institute of Social Sciences (TISS),
+                        Mumbai</a></li><br>
+                <li><a href="https://delhi.nfsu.ac.in/" style="color:blue">National Institute of Criminology and
+                        Forensic Science, Delhi</a></li><br>
+                <li><a href="https://www.unom.ac.in/" style="color:blue">University of Madras, Chennai</a></li><br>
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University, Noida</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/law/ranking/top-law-colleges-in-india/56-2-0-0-0" class="button"><i>For
+                    more information...</i></a>
+
+        </div>
+        <div id="course3" class="course">
+            <h1>Public Policy</h1>
+            <p>The Public Policy program prepares students at various educational levels to analyze, develop, and
+                implement
+                policies
+                that address societal issues. The curriculum encompasses a broad range of subjects including political
+                science,
+                economics, public administration, policy analysis, ethics, statistics, and public management. Students
+                learn
+                to
+                critically assess the impact of policies and develop strategic solutions for challenges in both the
+                public
+                and
+                private sectors. Practical experiences such as internships, policy research projects, and capstone
+                courses
+                are
+                integral components of the program, providing hands-on learning opportunities.</p>
+            <img src="https://jgu.edu.in/blog/wp-content/uploads/2024/01/shutterstock_434507533.jpg" alt="Course 3"
+                class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Public Policy</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Minimum GPA requirement, typically around 2.5 to 3.0 on a 4.0 scale.</li><br>
+                        <li>SAT or ACT scores, if required by the institution.</li><br>
+                        <li>TOEFL or IELTS scores for non-native English speakers.</li><br>
+                        <li>Usually, one or two letters of recommendation.</li><br>
+                        <li>A written statement outlining interest in public policy.</li><br>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Public Policy</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A bachelor's degree from an accredited institution.Preferred fields of
+                            study include criminology, criminal justice, sociology, psychology, or related social
+                            sciences.
+                        </li>
+                        <br>
+                        <li>A minimum Grade Point Average (GPA) as required by the institution, typically around 3.0 on
+                            a
+                            4.0
+                            scale.</li><br>
+                        <li>For non-native English speakers, proof of English language proficiency through tests such as
+                            TOEFL
+                            or IELTS is required.
+                        </li><br>
+                        <li>Usually, two or three letters of recommendation from academic or professional references.
+                        </li>
+                        <br>
+                        <li>A current resume or curriculum vitae highlighting academic and professional achievements.
+                        </li>
+                        <br>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Certificate in Policy Analysis</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Preferred or required background in public policy, political science, or related fields.
+                        </li>
+                        <br>
+                        <li>A written statement outlining interest in policy analysis.</li><br>
+                    </ul>
+                    </p>
+                </li>
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b>₹4,00,000 - ₹8,00,000 per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹9,00,000 - ₹15,00,000 per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹15,00,000 - ₹25,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://hss.iitd.ac.in/course/law-technology-and-citizenship" style="color:blue">Indian
+                        Instituteof Technology (IIT), Delhi</a></li><br>
+                <li><a href="https://jgu.edu.in/" style="color:blue">OP Jindal Global University, Sonipat</a></li><br>
+                <li><a href="https://www.nls.ac.in/" style="color:blue">National Law School of India University
+                        (NLSIU),Bangalore</a></li><br>
+                <li><a href="https://www.iimb.ac.in/" style="color:blue">Indian Institute of Management (IIM),
+                        Bangalore</a>
+                </li>
+            </ul>
+            <a href="https://www.shiksha.com/humanities-social-sciences/political-science/colleges/public-policy-colleges-india"
+                class="class=" button"><i>For more information...</i></a>
+        </div>
+        <div id="course4" class="course">
+            <h1>Human Rights</h1>
+            <p>The Human Rights program offers comprehensive education and training for individuals dedicated to
+                understanding and advocating for human rights.
+                The curriculum spans foundational principles, legal frameworks, and practical skills in human rights
+                theory,
+                international law, social justice,
+                advocacy, and humanitarian aid. Students gain expertise through a combination of coursework, research,
+                critical thinking, and activism, with
+                opportunities for hands-on experiences such as internships with human rights organizations and
+                international
+                bodies.</p>
+            <img src="https://images.pexels.com/photos/109919/pexels-photo-109919.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Course 4" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Human Rights</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Minimum GPA requirement, typically around 2.5 to 3.0 on a 4.0 scale.</li><br>
+                        <li>Usually, one or two letters of recommendation.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Arts in Human Rights Law</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A first degree in law (LL.B. or equivalent) from an accredited institution.</li><br>
+                        <li>Minimum GPA requirement, typically around 3.0 on a 4.0 scale.</li><br>
+                        <li>A current resume or curriculum vitae.</li><br>
+                        <li>Usually, two or three letters of recommendation.</li><br>
+                        <li>A written statement outlining academic interests and career goals.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Certificate in Humanitarian Aid</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Preferred or required background in humanitarian work or related fields.</li><br>
+                        <li>A written statement outlining interest in humanitarian aid.</li>
+                    </ul>
+                    </p>
+                </li>
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3,00,000 - ₹6,50,000 per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6,00,000 - ₹12,00,000 per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹10,00,000 - ₹20,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.tiss.edu/" style="color:blue">Tata Institute of Social Sciences (TISS),
+                        Mumbai</a>
+                </li>
+                <br>
+                <li><a href="https://www.ssla.edu.in/" style="color:blue">Symbiosis School for Liberal Arts, Pune</a>
+                </li>
+                <br>
+                <li><a href="https://www.jmi.ac.in/" style="color:blue">Jamia Millia Islamia, Delhi</a>
+                </li><br>
+                <li><a href="https://www.jmi.ac.in/" style="color:blue">Symbiosis Law School, Pune</a>
+                </li>
+            </ul>
+            <a href="https://targetstudy.com/colleges/ba-human-rights-degree-colleges-in-india.html"
+                class="button"><i>For
+                    more information...</i></a>
+
+        </div>
+        <div id="course5" class="course">
+            <h1>Environmental Policy and Management</h1>
+            <p>The Environmental Policy and Management program offers a comprehensive education for individuals
+                interested
+                in addressing environmental
+                challenges through policy development and implementation. The curriculum integrates environmental
+                science,
+                policy analysis, natural resource
+                management, sustainability, environmental law, and regulatory compliance. Students gain expertise
+                through
+                coursework, research projects, and
+                practical experiences, equipping them to develop strategies for environmental protection and sustainable
+                development.</p>
+            <img src="https://askelsustainabilitysolutions.com/wp-content/uploads/2022/02/Environmental-Policy-Explained-1024x578.png"
+                alt="Course 5" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Environmental Policy and Management</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li>
+                        <br>
+                        <li>Minimum GPA requirement, typically around 2.5 to 3.0 on a 4.0 scale.</li><br>
+                        <li>A written statement outlining interest in human rights with one or two letter of
+                            reccomendation.
+                        </li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Environmental Policy</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A first degree in law (LL.B. or equivalent) from an accredited institution.</li><br>
+                        <li>Minimum GPA requirement, typically around 3.0 on a 4.0 scale.</li><br>
+                        <li>A written statement outlining academic interests and career goals one or two letter of
+                            reccomendation.</li><br>
+                        <li>A current resume or curriculum vitae.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Certificate in Environmental Law</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of secondary education or equivalent (e.g., high school diploma).</li><br>
+                        <li>Preferred or required background in law, environmental science, or related fields.</li><br>
+                        <li>A written statement outlining interest in environmental law.</li>
+                    </ul>
+                    </p>
+                </li>
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3,50,000 - ₹8,00,000 per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b>₹7,00,000 - ₹15,00,000 per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b>₹10,00,000 - ₹25,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.terisas.ac.in/" style="color:blue">TERI School of Advanced Studies, Delhi</a>
+                </li>
+                <br>
+                <li><a href="https://www.jnu.ac.in/" style="color:blue">Jawaharlal Nehru University (JNU), Delhi</a>
+                </li>
+                <br>
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University, Noida</a>
+                </li><br>
+                <li><a href="https://www.nls.ac.in/" style="color:blue">National Law School of India University (NLSIU),
+                        Bangalore</a>
+                </li>
+            </ul>
+            <a href="https://bschool.careers360.com/colleges/list-of-environment-management-colleges-in-india"
+                class="button"><i>For more information...</i></a>
+
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+
+</html>

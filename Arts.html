@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn"onclick="toggleMenu()">☰</button>
+    <div class="menu"id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Digital Media and Animation</li>
+            <li onclick="showCourse('course2')">Graphic Design</li>
+            <li onclick="showCourse('course3')">Music Production </li>
+            <li onclick="showCourse('course4')">Film and Media Studies</li>
+            <li onclick="showCourse('course5')">Performing Arts </li>
+            <li onclick="showCourse('course6')">Fashion Design </li>
+        </ul>
+ </div>
+    <div class="content"id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Arts</i></h1>
+            <p style="font-size:18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://www.zionmarketresearch.com/content/uploadedimages/global-movies-entertainment-market-size.png ">
+            <br><br><img src="https://prd-api-aggregate.statcrunch.com/api/aggregation/documents/578628YJSGE?context=results_image&code=&extension=png ">
+        </div>
+
+        <div id="course1" class="course">
+            <h1>Digital Media and Animation</h1>
+            <p> Digital media and animation encompass a wide range of creative and technical fields, involving the use of digital technology to create visual content, animations, interactive media, and more.</p>
+            <img src="https://www.theanimationguys.com/wp-content/uploads/2021/08/SocialMediaAnimation_1920_1080_03.png" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of fine Arts in Digital Media</h4>
+                    <p><b>Duration:</b> (3-4) years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Arts or Science as a compulsory subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>UCEED</b>(Undergraduate Common Entrance Exam for Design) or <b>NID DAT</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Fine Arts in Animation and Visual Effects</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in digital Media,fine arts or related field.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>CEED</b> score in Architecture and Planning.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Digital Media/Animation</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Digital Media/Animation</h4>
+                    <p><b>Duration:</b> Varies (2-4 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Digital Media/Animation or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>CAT/MAT</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Interactive computer graphics</li><br>
+                        <li>Certificate in Game Design:Arts and Concepts</li><br>
+                        <li>Certificate in Introduction to programming and Animation with Alice</li><br>
+                        <li>Certificate in Create training videos</li><br>
+                        <li>Certificate in Virtual Reality</li><br>
+                        <li>Certificate in Introduction to 3D Modelling</li><br>
+                        <li>Certificate in Arts for Games</li><br>
+                        <li>Certificate in Meta AR Developer</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹7 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (5-8 years of experience):</b> ₹7 to ₹15 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (9+ years of experience):</b> ₹10 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://csmu.ac.in/" style="color:blue">Chhatrapati Shivaji Maharaj University.</a></li><br>
+                <li><a href="https://www.nid.edu/home" style="color:blue">National Institute of Design (NID)</a></li><br>
+                <li><a href="https://bangaloreuniversity.karnataka.gov.in/" style="color:blue">Bangalore University</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+            
+        </div>
+
+
+    <div id="course2" class="course">
+        <h1>Graphic Design</h1>
+        <p> Graphic design is a creative field that involves the use of visual content to communicate messages. It encompasses a variety of techniques and tools to create designs for print, digital media, and various other applications.</p>
+        <img src="https://wallpaperaccess.com/full/251567.jpg" alt="Course2" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Arts in Graphic Design</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>UCEED</b>(Undergraduate Common Entrance for Design) or <b>NID DAT</b>.</li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of fine Arts in Graphic Design</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Graphic Design or related field.</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>CEED/NIFT</b> score in Graphic Desiging.</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Graphic Design</h4>
+                <p><b>Duration:</b> 1 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Graphic Design</h4>
+                <p><b>Duration:</b> Varies (3-4 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Graphic Design or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li>Some institutions may require a qualifying score in entrance exams like <b>NID DAT</b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li>Certificate in Graphic Design</li><br>
+                    <li>Certificate in Fundamentals of Graphic Design</li><br>
+                    <li>Certificate in Google UX Design</li><br>
+                    <li>Certificate in Interactive Computer Graphics</li><br>
+                    <li>Certificate in Google Ads for Beginners</li><br>
+                    <li>Certificate in Google Digital Marketing and E-Commerce</li><br>
+                    <li>Certificate in Advanced Graphic Design</li><br>
+                    <li>Certificate in The Language of Design</li>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹7 lakhs per annum</li><br>
+            <li><b>Mid-Level Professionals (5-10 years of experience):</b> ₹6 to ₹15 lakhs per annum</li><br>
+            <li><b>Experienced Professionals (10+ years of experience):</b> ₹9 to ₹25 lakhs per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left" class="links">
+            <li><a href="https://www.idc.iitb.ac.in/index.html" style="color:blue">Industrial Design Centre (IDC), IIT Bombay.</a></li><br>
+            <li><a href="https://www.nid.edu/home" style="color:blue">National Institute of Design (NID).</a></li><br>
+            <li><a href="https://www.mitsd.ac.in/" style="color:blue">MIT Institute of Design.</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        
+    </div>
+    
+    
+    <div id="course3"class="course">
+        <h1>Music Production </h1>
+        <p>Music production is the process of writing, recording, and manipulating music for distribution.It is the creative process of composing, recording, arranging, editing, mixing, and mastering audio to create a final piece of music. Music production can be done in a professional studio setting or at home with digital audio workstations (DAWs) and virtual instruments. </p>
+        <img src="https://djpunk.in/wp-content/uploads/2023/10/music-production.jpeg" alt="Course3" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Music in Music Production</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Science in Audio Engineering</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Music Production</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>JEE</b> score in Architecture and Planning.</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Certificate in Music Technology </h4>
+                <p><b>Duration:</b> 3 months<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Music Production</h4>
+                <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Music Production or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li> should have passed National level fellowship examination. </b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li> Pune Institute of Computer Technology (PICT) </li><br>
+                    <li> Berklee College of Music (Online) </li><br>
+                    <li> Digital Academy India </li><br>
+                    <li> True School of Music (Mumbai) </li><br>
+                    <li> Saraswati Music College (Delhi) </li><br>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹6 lakhs per annum</li><br>
+            <li><b>Mid-Level Music Producer(3-7 years of experience):</b> ₹6 to ₹12 lakhs per annum</li><br>
+            <li><b>Experienced Music Producer(8+ years of experience):</b> ₹12 to ₹30 lakhs per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left"class="links">
+            <li><a href="https://srfti.ac.in/" style="color:blue">Satyajit Ray Film and Television Institute </a></li><br>
+            <li><a href="https://zima.co.in/" style="color:blue">Zee Institutes of Media Arts </a></li><br>
+            <li><a href="https://www.kmmc.in/" style="color:blue">K M College of Music and Technology </a></li>
+        </ul>
+        <a href="https://www.shiksha.com/arts-fine-visual-performing/articles/best-music-production-colleges-in-india-blogId-147529" class="button"><i>For more information...</i></a>
+        
+    </div>
+
+    <div id="course4"class="course">
+        <h1>Film and Media Studies </h1>
+        <p>It is concerned with the teaching of screen literacy as it applies to moving images and screens — cinema, television, new media — and looks at dominant and alternative practices — global media, mass-entertainment, advertising, Hollywood cinema, art cinema, the avant-garde, local and indigenous media, and documentary. Film and media studies is an interdisciplinary bachelor of arts program within the School of Communication, Film, and Media Studies (SCFMS).</p>
+        <img src="https://www.careergirls.org/wp-content/uploads/2018/03/FilmProduction_500x500.jpg"alt="Course3"class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Arts in Film and Media Studies</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Fine Arts in Film Production</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Film and Media</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>CUET</b> score in Film and Media.</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Screenwriting</h4>
+                <p><b>Duration:</b> 3 months<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Film and Media Studies</h4>
+                <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Film Production or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li> Film and Television Institute of India (FTII), Pune </li><br>
+                    <li> National Institute of Design (NID), Ahmedabad </li><br>
+                    <li> Whistling Woods International (Mumbai) </li><br>
+                    <li> Asian Academy of Film & Television (AAFT), Noida </li><br>
+                    <li> Satyajit Ray Film & Television Institute (SRFTI), Kolkata </li><br>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹6 lakhs per annum</li><br>
+            <li><b>Mid-Level Producer(3-7 years of experience):</b> ₹6 to ₹12 lakhs per annum</li><br>
+            <li><b>Experienced Producer(8+ years of experience):</b> ₹12 to ₹30 lakhs per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left"class="links">
+            <li><a href="https://dsc.edu.in/" style="color:blue"> The Delhi school of Communication </a></li><br>
+            <li><a href="https://zima.co.in/" style="color:blue"> Zee Institutes of Media Arts </a></li><br>
+            <li><a href="https://www.kmmc.in/" style="color:blue"> K M College of Music and Technology </a></li>
+        </ul>
+        <a href="https://www.shiksha.com/mass-communication-media/articles/top-15-film-schools-in-india-2024-courses-fees-scope-blogId-143167"class="button"><i>For more information...</i></a>
+        
+    </div>
+
+    <div id="course5" class="course">
+        <h1>Performing arts</h1>
+        <p>Performance arts encompass a range of artistic disciplines where artists use their voices, bodies, or inanimate objects to convey artistic expression. This category includes theater, dance, music, opera, mime, puppetry, and circus arts, among others. These forms often combine elements of storytelling, movement, sound, and visual art to create immersive experiences. Performance arts can be live or recorded and are often presented in theaters, concert halls, streets, and other venues. They play a crucial role in culture by reflecting societal values, provoking thought, and providing entertainment. Performance arts also foster creativity and community engagement. </p>
+        <img src="https://th.bing.com/th/id/OIP.zfrFmeabeRz4uq0oUsZ1BAHaE8?w=1800&h=1200&rs=1&pid=ImgDetMain" alt="Course3"class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of fine arts in Performancing arts.</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li> Completion of secondary education or its equivalent..</li><br>
+                        <li>Some institutions may require an entrance examination or interview. </li><br>
+                        <li>Certain programs might require prior coursework in relevant subjects such as theater, music, or dance. </li><br>
+                        <li>For non-native speakers, proof of proficiency in the language of instruction (e.g., TOEFL or IELTS for English) may be required. </li><br>
+
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of fine arts in Theatre Arts.</h4>
+                <p><b>Duration:</b> 2-3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A relevant undergraduate degree, often in fine arts, theater, dance, music, or a related field..</li><br>
+                        <li>Professional or substantial practical experience in performance arts may be required..</li><br>
+                        <li>Some programs may require an interview as part of the admissions process. </li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diplomo in Performance arts </h4>
+                <p><b>Duration:</b>1 year<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A high school diploma or equivalent is generally required. </li>
+                        <li>Some programs may accept candidates with significant practical experience in the performing arts even if they don't meet formal educational requirements.</li>
+
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Performance arts.</h4>
+                <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master's degree in Performance Arts or a related field (such as Theatre, Dance, Music, etc.).Some programs may accept candidates with extensive professional experience in the performing arts, even if they don't have a Master's degree..</li><br>
+                        <li>Significant professional experience in the field of performance arts is often preferred.</li><br>
+                        <li> Submission of a detailed research proposal outlining the intended area of study.</b></li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li> Certified Performance Coach</li><br>
+                    <li> Diploma in Theater Arts </li><br>
+                    <li> Dance Certifications</li><br>
+                    <li>Music Certifications </li><br>
+                    <li> Acting and Drama Certifications</li><br>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b>₹25,000 to ₹50,000 per month. </li><br>
+            <li><b>Mid-Level (3-7 years of experience):</b> ₹50,000 to ₹1,00,000 per month.</li><br>
+            <li><b>Experienced (8+ years of experience):</b> ₹1,00,000 to ₹2,00,000 or more per month.</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left"class="links">
+            <li><a href="https://nsd.gov.in/delhi/" style="color:blue">National School of Drama (NSD), New Delhi </a></li><br>
+            <li><a href="https://ftii.ac.in/" style="color:blue"> Film and Television Institute of India (FTII), Pune </a></li><br>
+            <li><a href="https://www.sangeetnatak.gov.in/"style="color:blue"> Sangeet Natak Akademi, New Delhi</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/arts-fine-visual-performing/colleges/colleges-india?rf=searchWidget" class="button"><i>For more information...</i></a>
+        
+    </div>
+    <div id="course6"class="course">
+        <h1>Fashion design</h1>
+        <p>Fashion design is the art of applying design, aesthetics, and natural beauty to clothing and accessories. It is influenced by cultural and social attitudes and evolves over time. Fashion designers work in a variety of ways, designing clothing and accessories. They create original garments, or adapt fashion trends. They must consider who is likely to wear a garment and the situations in which it will be worn. Designers use a wide range of materials and techniques, including computer-aided design (CAD). Fashion design encompasses both haute couture and ready-to-wear collections, blending creativity with functionality and market demand. </p>
+        <img src="https://www.easyuni.my/media/uploads/2019/12/23/fashion-design-course_Kntbjjr.jpg" alt="Course6"class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of fine arts in Fashion design.</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li> Completion of secondary education or its equivalent..</li><br>
+                        <li>Some institutions may require an entrance examination or interview. </li><br>
+                        <li>Certain programs might require prior coursework in relevant subjects . </li><br>
+
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of fine arts in Fashion merchandising and management</h4>
+                <p><b>Duration:</b> 2years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A relevant undergraduate degree, often in fine design, fashion merchandising , business or related field.</li><br>
+                        <li>Professional or substantial practical experience in fashion design may be required..</li><br>
+                        <li>Some programs may require an interview as part of the admissions process. </li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diplomo in Fashion design </h4>
+                <p><b>Duration:</b>1 year<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A high school diploma or equivalent is generally required. </li>
+                        <li>Some programs may accept candidates with significant practical experience in the fashion design even if they don't meet formal educational requirements.</li>
+
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Fashion design.</h4>
+                <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master's degree in Fashion design or a related field. Some programs may accept candidates with extensive professional experience in the fashion design, even if they don't have a Master's degree..</li><br>
+                        <li>Significant professional experience in the field of fashion design is often preferred.</li><br>
+                      
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li> Certificate in Fashion Illustration</li><br>
+                    <li> Certified Performance Coach </li><br>
+                    <li> Sustainable Fashion Certificate</li><br>
+                    <li> Certificate in Pattern Making and Garment Construction</li><br>
+                    <li> Certificate in Fashion Merchandising and Marketing</li><br>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b>₹ 2 to ₹4 lakhs per annum. </li><br>
+            <li><b>Mid-Level (3-7 years of experience):</b>₹4 to ₹8 lakhs per annum.</li><br>
+            <li><b>Experienced (8+ years of experience):</b> ₹8 to ₹15 lakhs per annum..</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left"class="links">
+            <li><a href="https://www.nift.ac.in/" style="color:blue">National Institute of Fashion Technology (NIFT)</a></li><br>
+            <li><a href="https://www.nid.edu/home" style="color:blue">National Institute of Design (NID)</a></li><br>
+            <li><a href="https://www.pearlacademy.com/" style="color:blue">Pearl Academy </a></li>
+        </ul>
+        <a href="https://www.shiksha.com/college/indira-gandhi-fashion-design-college-parli-vaijnath-192607/courses/science-s?rf=searchWidget" class="button"><i>For more information...</i></a>
+        
+    </div>
+    </div>
+
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        const content = document.getElementById('content');
+        menu.classList.toggle('show');
+        if (menu.classList.contains('show')) {
+            content.classList.add('with-menu');
+        } else {
+            content.classList.remove('with-menu');
+        }
+    }
+
+    function showCourse(courseId) {
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+        document.getElementById(courseId).classList.add('active');
+        document.getElementById('welcome').style.display = 'none';
+        const menu = document.getElementById('menu');
+        if (menu.classList.contains('show')) {
+            toggleMenu();
+        }
+    }
+
+    document.querySelectorAll('.course').forEach(course => {
+        course.classList.remove('active');
+    });
+</script>
+</body>
+</html>

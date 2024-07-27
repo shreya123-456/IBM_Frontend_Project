@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Artificial Intelligence and Machine Learning</li>
+            <li onclick="showCourse('course2')">Cybersecurity</li>
+            <li onclick="showCourse('course3')">Data Science and Analytics</li>
+            <li onclick="showCourse('course4')">Software Development</li>
+            <li onclick="showCourse('course5')">Blockchain and Cryptography</li>
+            <li onclick="showCourse('course6')">Internet of Things(IoT)</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Computer Science</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://www.trootech.com/backend/uploads/f_webp/image1_6a8fb6b10f.jpg">
+            <br><br><img src="https://cdn.prod.website-files.com/5e9aa66fd3886aa2b4ec01ca/6655b94820c85688d4269698_EhF1Ts5FKpw_P9wIR_uJDGb_x98F6Ycp5hrNlLk0q7MF9TEm2ab8Vr7-JknmlNFLo1sTH4wZP6uFVsOAQKTLljLgAHxcgABr0Tueqki8AuJz2hANj0AZJHwQrU03xcVlOwkTmmsK5NayNX9tvEyD4VI.png">
+        </div>
+
+
+
+<div id="course1" class="course">
+    <h1>Artificial Intelligence and Machine Learning</h1>
+    <p>Artificial Intelligence (AI) and Machine Learning (ML) are transforming the way we interact with technology, enabling systems to learn from data, adapt, and make intelligent decisions. AI is the broader concept of machines being able to carry out tasks in a way that we would consider "smart," while ML is a subset of AI that focuses on the idea that machines can learn from data, identify patterns, and make decisions with minimal human intervention. These cutting-edge technologies are driving innovations across various fields, from personalized recommendations in e-commerce to predictive analytics in healthcare, making our world smarter and more efficient every day.</p>
+    <img src="https://cdn-gcp.new.marutitech.com/robot_humanoid_using_tablet_computer_big_data_analytic_1_94eab7101e.jpg" alt="Course 5" class="course-image">
+    <h2>Courses</h2>
+    <ol style="text-align: left;">
+        <li>
+            <h4>Bachelor of Technology (B.Tech) in AI and ML</h4>
+            <p><b>Duration:</b> 4 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>10+2 with Physics, Chemistry, and Mathematics; Entrance exams like <b>JEE Main/Advanced</b>, state-level exams, or university-specific exams.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Master of Technology (M.Tech) in AI and ML</h4>
+            <p><b>Duration:</b> 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>B.Tech/B.E. in Computer Science, Electronics, or related fields; <b>GATE</b> score.</li>
+                </ul>
+            </p>
+        </li>    
+        <li>
+            <h4>Post Graduate Diploma in AI and ML (offered by various institutions like IIITs, NITs)</h4>
+            <p><b>Duration:</b> 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree in Engineering/Technology or equivalent; some programs may require relevant work experience.</li>
+                </ul>
+            </p>
+        </li>    
+        <li>
+            <h4>Professional Certificate Programs in AI and ML (offered by institutes like IITs, ISB, IIMs in collaboration with online platforms like Coursera, edX)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; some courses may require basic programming knowledge or relevant work experience.</li>
+                </ul>
+            </p>
+        </li>     
+        <li>
+            <h4> PG Program in Machine Learning and AI (offered by Great Learning, upGrad in collaboration with institutes like UT Austin, IIT Madras)</h4>
+            <p><b>Duration:</b> 11 months to 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; relevant work experience preferred but not mandatory.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Diploma in AI and ML (offered by NIIT, Simplilearn)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree in Engineering/Technology or related fields; some programs may require knowledge of programming languages.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Ph.D. in AI and ML</h4>
+            <p><b>Duration:</b> 3 to 5 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Master’s degree in relevant field; <b>GATE/NET/JRF</b> scores or university-specific entrance exams.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Executive Programs in AI and ML (offered by IIMs, ISB)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; relevant work experience in managerial roles.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Certifications(6 months-1 year)</h4>
+            <ul style="font-style: italic">
+                <li>Professional Certificate Program in Machine Learning and AI (offered by IIT Kanpur through Coursera)</li><br>
+                <li>Post Graduate Program in AI and Machine Learning (offered by Great Learning in collaboration with UT Austin)</li><br>
+                <li>Advanced Certificate Programme in Machine Learning and AI (offered by IIIT Bangalore and upGrad)</li><br>
+                <li>PG Diploma in Machine Learning and AI (offered by IIIT Hyderabad and TalentSprint)</li><br>
+                <li>Executive Program in AI and Machine Learning (offered by IIM Calcutta)</li><br>
+                <li>Advanced Program in AI and Machine Learning (offered by IIM Kozhikode and Coursera)</li><br>
+                <li>Professional Certificate in Machine Learning and Artificial Intelligence (offered by edX in collaboration with top universities)</li><br>
+                <li>Advanced Certification in AI and ML (offered by IIT Madras and Great Learning)</li>
+            </ul>
+        </li>       
+    </ol>
+    <h2>Salary Expectations</h2>
+    <ul style="text-align: left">
+        <li><b>Freshers:</b> ₹4,00,000 to ₹8,00,000 per annum</li><br>
+        <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹8,00,000 to ₹15,00,000 per annum</li><br>
+        <li><b>Experienced Professionals (7+ years of experience):</b> ₹15,00,000 to ₹30,00,000+ per annum</li>
+    </ul>
+    <h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology Bombay</a></li><br>
+        <li><a href="http://www.iiitd.ac.in/" style="color:blue">Indraprastha Institute of Information Technology, Delhi</a></li><br>
+        <li><a href="https://www.amity.edu/" style="color:blue">Amity University, Noida</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/engineering/colleges/ai-ml-colleges-india" class="button"><i>For more information...</i></a>           
+</div>
+
+
+
+
+<div id="course2" class="course">
+    <h1>Cybersecurity</h1>
+    <p>Cybersecurity is the guardian of our digital world, shielding sensitive information from cyber threats and attacks. In an era where data is the new gold, robust cybersecurity measures are essential to protect personal, corporate, and national security. From safeguarding financial transactions and personal data to defending against malicious hackers and cyber espionage, cybersecurity encompasses a wide range of practices and technologies designed to keep our digital lives secure. As cyber threats evolve, so do the innovative solutions, ensuring that our online experiences remain safe and trustworthy.</p>
+    <img src="https://www.neit.edu/wp-content/uploads/2022/10/Businessman-using-antivirus-to-block-a-cyber-attack-3D-rendering-1024x553.jpeg" alt="Course 5" class="course-image">
+    <h2>Courses</h2>
+    <ol style="text-align: left;">
+        <li>
+            <h4>Bachelor of Technology (B.Tech) in Cybersecurity</h4>
+            <p><b>Duration:</b> 4 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>10+2 with Physics, Chemistry, and Mathematics; Entrance exams like <b>JEE Main/Advanced</b>, state-level exams, or university-specific exams.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Master of Technology (M.Tech) in Cybersecurity</h4>
+            <p><b>Duration:</b> 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>B.Tech/B.E. in Computer Science, IT, Electronics, or related fields; <b>GATE</b> score.</li>
+                </ul>
+            </p>
+        </li>    
+        <li>
+            <h4>Post Graduate Diploma in Cybersecurity (offered by institutions like CDAC, NIIT)</h4>
+            <p><b>Duration:</b> 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree in Engineering/Technology or related fields; some programs may require relevant work experience.</li>
+                </ul>
+            </p>
+        </li>    
+        <li>
+            <h4>Professional Certificate Programs in Cybersecurity (offered by institutes like IITs, IIMs, in collaboration with online platforms like Coursera, edX)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; some courses may require basic knowledge of IT and networking.</li>
+                </ul>
+            </p>
+        </li>     
+        <li>
+            <h4>PG Program in Cybersecurity (offered by platforms like Great Learning, upGrad in collaboration with international universities)</h4>
+            <p><b>Duration:</b> 11 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; relevant work experience preferred but not mandatory.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Diploma in Cybersecurity (offered by institutions like Symbiosis, IGNOU)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree in any field; some programs may require knowledge of basic IT concepts.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Ph.D. in Cybersecurity</h4>
+            <p><b>Duration:</b> 3 to 5 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Master’s degree in relevant field; <b>GATE/NET/JRF</b> scores or university-specific entrance exams.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Executive Programs in Cybersecurity (offered by IIMs, ISB)</h4>
+            <p><b>Duration:</b> 6 months to 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Bachelor's degree; relevant work experience in managerial or IT roles.</li>
+                </ul>
+            </p>
+        </li> 
+        <li>
+            <h4>Certified Information Systems Security Professional (CISSP)</h4>
+            <p><b>Duration:</b> Varies (preparation time can range from 6 months to 1 year)<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>At least five years of cumulative, paid work experience in two or more of the eight domains of the <b>CISSP CBK</b> (Common Body of Knowledge).</li>
+                </ul>
+            </p>
+        </li>  
+        <li>
+            <h4>Certified Ethical Hacker (CEH)</h4>
+            <p><b>Duration:</b> Varies (typically a few months of preparation)<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Basic knowledge of networking and security; some providers may require work experience or prior certifications.</li>
+                </ul>
+            </p>
+        </li>    
+        <li>
+            <h4>Certifications(6 months-1 year)</h4>
+            <ul style="font-style: italic">
+                <li>Post Graduate Program in Cybersecurity (offered by Great Learning in collaboration with Stanford University)</li><br>
+                <li>Advanced Executive Program in Cybersecurity (offered by IIT Kanpur and Simplilearn)</li><br>
+                <li>PG Diploma in Cybersecurity (offered by CDAC)</li><br>
+                <li>Advanced Certification in Cybersecurity (offered by IIT Madras and Great Learning)</li><br>
+                <li>Professional Certificate in Cybersecurity (offered by edX in collaboration with top universities)</li><br>
+                <li>Post Graduate Program in Cybersecurity (offered by upGrad in collaboration with IIIT Bangalore)</li><br>
+                <li>Advanced Program in Cybersecurity and Cyber Defense (offered by Jigsaw Academy in collaboration with IIT Roorkee)</li>
+            </ul>
+        </li>       
+    </ol>
+    <h2>Salary Expectations</h2>
+    <ul style="text-align: left">
+        <li><b>Freshers:</b> ₹3,00,000 to ₹6,00,000 per annum</li><br>
+        <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹6,00,000 to ₹12,00,000 per annum</li><br>
+        <li><b>Experienced Professionals (7+ years of experience):</b> ₹12,00,000 to ₹25,00,000+ per annum</li>
+    </ul>
+    <h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://kjsce.somaiya.edu/en/" style="color:blue">K J Somaiya College of Engineering, Mumbai</a></li><br>
+        <li><a href="https://www.bennett.edu.in/" style="color:blue">Bennett University, Greater Noida</a></li><br>
+        <li><a href="https://www.iiits.ac.in/" style="color:blue">Indian Institute of Information Technology, Sri City, Chittoor</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/it-software/networking-hardware-security/colleges/cyber-security-colleges-india#:~:text=semi%2Dgovernment%20owned.-,Some%20of%20the%20top%20Cyber%20Security%20colleges%20in%20India%20are,Cyber%20Security%20colleges%20in%20India." class="button"><i>For more information...</i></a>           
+</div>
+
+
+
+<div id="course3" class="course">
+    <h1>Data Science and Analytics</h1>
+    <p>Data Science and Analytics involves extracting insights and knowledge from data through statistical analysis, machine learning, and computational techniques. It combines mathematics, statistics, programming, and domain expertise to analyze large datasets. This field is essential for making data-driven decisions in various industries, including finance, healthcare, marketing, and technology.</p>
+    <img src="https://miro.medium.com/v2/resize:fit:702/1*Ra02AqsQlC0KV229EvM98g.png" alt="Course 1" class="course-image">
+    <h2>Courses</h2>
+    <ol style="text-align: left;">
+        <li>
+            <h4>Bachelor of Science in Data Science(BA)</h4>
+            <p><b>Duration:</b> 3 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.A strong foundation in Mathematics and/or Statistics is usually required.</li><br>
+                    <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                    <li> Some universities and colleges may require candidates to pass an entrance exam as part of the admission process. Specific entrance exams can vary, and some institutions may also consider scores from national or state-level exams.</li><br>
+                    <li> Some institutions might accept scores from common entrance tests like <b>JEE Main</b>, depending on the university's policies.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Master of Science in Data Analytics</h4>
+            <p><b>Duration:</b> 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li> Candidates usually need a bachelor’s degree in a relevant field such as Computer Science, Mathematics, Statistics, Engineering, Economics, or a related discipline from a recognized university</li><br>
+                    <li>A minimum percentage in the undergraduate degree, often around 50-60%, depending on the institution.</li><br>
+                    <li><b>GATE</b> (Graduate Aptitude Test in Engineering): For admissions to postgraduate programs in engineering and technology.</li><br>
+                    <li>Indian Institutes of Technology (IITs): May require GATE scores for MSc Data Science programs.</li><br>
+                    <li>National Institute of Technology (NITs): Often require GATE scores.</li><br>
+                    <li>Some institutions require candidates to pass an entrance exam as part of the admission process.</li>
+                </ul>
+            </p>
+        </li>    
+         <li>
+            <h4>Professional Certificate in Data Analysis</h4>
+            <ul style="font-style: italic">
+                <li>Google Data Analytics Professional Certificate (Coursera)</li><br>
+                <li>IBM Data Analyst Professional Certificate (Coursera)</li><br>
+                <li>Microsoft Certified: Data Analyst Associate (Power BI)</li><br>
+                 <li>Data Science and Analytics Certificate (Harvard Online)</li><br>
+                 <li>Certified Analytics Professional (CAP)</li><br>
+             </ul>
+        </li>       
+    </ol>
+    <h2>Salary Expectations</h2>
+    <ul style="text-align: left">
+        <li><b>Freshers (0-5 years of experience):</b>₹5,00,000 to ₹10,00,000 per annum(Data Analyst, Junior Data Scientist, Business Intelligence Analyst)</li><br>
+        <li><b>Mid-Level Journalists (5-10 years of experience):</b>₹10,00,000 to ₹20,00,000 per annum(Data Scientist, Senior Data Analyst, Analytics Consultant)</li><br>
+        <li><b>Experienced Journalists (10+ years of experience):</b> ₹20,00,000 to ₹40,00,000+ per annum(Lead Data Scientist, Data Science Manager, Chief Data Officer)</li>
+    </ul>
+    <h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://www.isical.ac.in/" style="color:blue">Indian Statistical Institute (ISI)</a></li><br>
+        <li><a href="https://www.som.iitb.ac.in/" style="color:blue">IIT Bombay - Shailesh J. Mehta School of Management</a></li><br>
+        <li><a href="https://www.iitm.ac.in/" style="color:blue">IIT Madras - Data Science and Engineering</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+</div>
+
+
+<div id="course4" class="course">
+    <h1>Software Development</h1>
+    <p>Software development is the process of designing, creating, testing, and maintaining software applications or systems. It involves various stages, including requirements analysis, system design, coding, testing, and deployment. Software development aims to produce efficient, reliable, and user-friendly software solutions that meet specific needs or solve particular problems. This field encompasses a wide range of practices and technologies, from desktop applications to mobile apps and web services.</p>
+    <img src="https://www.shutterstock.com/image-photo/digital-technology-software-development-concept-260nw-2111828198.jpg" alt="Course 1" class="course-image">
+    <h2>Courses</h2>
+    <ol style="text-align: left;">
+        <li>
+            <h4>Bachelor of Science in Computer Science</h4>
+            <p><b>Duration:</b> 3 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.with a background in Science, including subjects like Mathematics and Physics. Some institutions may also accept students with a background in Computer Science.</li><br>
+                    <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                    <li> Some universities and colleges may require candidates to pass an entrance exam as part of the admission process. Although many admit students based on their 10+2 board exam marks.</li><br>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Master of Science in Software Engineering</h4>
+            <p><b>Duration:</b> 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li> Candidates typically need to have completed a Bachelor's degree in a related field, such as Computer Science, Information Technology, or Engineering. Some institutions may accept students with other relevant backgrounds, depending on the course's focus.</li><br>
+                    <li>A minimum percentage in the undergraduate degree, often around 50-60%, depending on the institution.</li><br>
+                    <li>Some universities or institutions may require candidates to pass an entrance exam or interview as part of the admission process.</li><br>
+                </ul>
+            </p>
+        </li>    
+         <li>
+            <h4> Certification For Full Stack Web Development Bootcamp</h4>
+            <ul style="font-style: italic">
+                <li>FreeCodeCamp: Full Stack Developer Certification</li><br>
+                <li>Udacity: Full Stack Web Developer Nanodegree</li><br>
+                <li>Coursera: Full Stack Web Development Specialization</li><br>
+                 <li>edX: Professional Certificate in Full Stack Web Development</li><br>
+                 <li>General Assembly:  Full Stack Web Development Immersive</li><br>
+                 <li>Springboard: Full Stack Web Development Bootcamp</li><br>
+                 <li>Ironhack: Full Stack Web Development Bootcamp</li><br>
+                 <li> CareerFoundry: Full Stack Web Development Program</li>   
+             </ul>
+        </li>       
+    </ol>
+    <h2>Salary Expectations</h2>
+    <ul style="text-align: left">
+        <li><b>Freshers (0-2 years of experience):</b>₹3,00,000 to ₹6,00,000 per annum</li><br>
+        <li><b>Mid-Level Journalists (3-5 years of experience):</b>₹6,00,000 to ₹12,00,000 per annum</li><br>
+        <li><b>Experienced Journalists (5+ years of experience):</b> ₹12,00,000 to ₹25,00,000+ per annum</li>
+    </ul>
+    <h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://www.iitb.ac.in//" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+        <li><a href="https://www.iitd.ac.in/" style="color:blue"> Indian Institute of Technology (IIT) Delhi</a></li><br>
+        <li><a href="https://www.iitk.ac.in/" style="color:blue"> Indian Institute of Technology (IIT) Kanpur</a></li><br>
+        <li><a href="https://www.nitt.edu/" style="color:blue"> National Institute of Technology (NIT) Trichy</a></li><br>
+        <li><a href="https://www.bits-pilani.ac.in/" style="color:blue"> BITS Pilani</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+</div>
+
+
+
+
+<div id="course5" class="course">
+    <h1>Blockchain and Cybersecurity</h1>
+    <p>Blockchain and Cybersecurity are revolutionizing the digital landscape, creating a fortress of trust and security in an increasingly connected world. Blockchain, with its decentralized and immutable ledger, ensures transparent and tamper-proof transactions, making it a game-changer for industries from finance to supply chain. Coupled with advanced cybersecurity measures, this powerful duo safeguards sensitive information, thwarts cyber threats, and builds resilient systems. Together, they pave the way for a secure and innovative future, where digital interactions are protected and privacy is paramount. Dive into the forefront of technology and explore the synergy of Blockchain and Cybersecurity.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0HpvV7anchg37DB7BziUPmJP_OcQRo7zWqQ&usqp=CAU" class="course-image">
+    <h2>Courses</h2>
+    <ol style="text-align: left;">
+<li>
+            <h4>Bachelor of Technology (B.Tech) in Computer Science and Engineering with specialization in Blockchain</h4>
+            <p><b>Duration:</b> 4 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Completion of 10+2 or equivalent examination with Mathematics and Physics.</li><br>
+                    <li>Minimum aggregate marks of 60% in 10+2 (may vary by institution).</li><br>
+                    <li>A qualifying score in entrance exams like <b>JEE Main</b> or <b>State Engineering Entrance Exams</b>.</li>
+                </ul>
+            </p>
+        </li>
+        <li>
+            <h4>Master of Technology (M.Tech) in Cybersecurity</h4>
+            <p><b>Duration:</b> 2 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>A recognized Bachelor’s degree in Computer Science or related field.</li><br>
+                    <li>Minimum aggregate marks of 60% (may vary by institution).</li><br>
+                    <li>Some institutions may require a valid <b>GATE</b> score.</li>
+                </ul>
+            </p>
+        </li>     
+        <li>
+            <h4>Diploma in Blockchain Technology</h4>
+            <p><b>Duration:</b> 1 year<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Completion of undergraduate degree or relevant experience in the field.</li>
+                </ul>
+            </p>
+        </li>     
+        <li>
+            <h4>Ph.D. in Cybersecurity</h4>
+            <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>A Master’s degree in Cybersecurity or related field.</li><br>
+                    <li>Minimum aggregate marks of 60% (may vary by institution).</li><br>
+                    <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                </ul>
+            </p>
+        </li>     
+        <li>
+            <h4>Integrated B.Tech + M.Tech in Blockchain and Cybersecurity</h4>
+            <p><b>Duration:</b> 5 years<br><br>
+                <b>Eligibility:</b><br>
+                <ul>
+                    <li>Completion of 10+2 or equivalent examination with Mathematics and Physics.</li><br>
+                    <li>Minimum aggregate marks of 60% in 10+2 (may vary by institution).</li><br>
+                    <li>A qualifying score in entrance exams like <b>JEE Main</b>.</li>
+</ul>
+            </p>
+        </li>   
+        <li>
+            <h4>Certifications (6 months - 1 year)</h4>
+            <ul style="font-style: italic">
+                <li>Certified Blockchain Developer</li><br>
+                <li>Certified Ethical Hacker (CEH)</li><br>
+                <li>Certified Information Systems Security Professional (CISSP)</li><br>
+                <li>Certificate in IoT Security</li><br>
+                <li>Certified Information Security Manager (CISM)</li>
+            </ul>
+        </li>       
+    </ol>
+    <h2>Salary Expectations</h2>
+    <ul style="text-align: left">
+        <li><b>Freshers (0-2 years of experience):</b> ₹4 to ₹6 lakhs per annum</li><br>
+        <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹7 to ₹15 lakhs per annum</li><br>
+        <li><b>Experienced Professionals (8+ years of experience):</b> ₹15 to ₹30 lakhs per annum or higher</li>
+    </ul>
+    <h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://www.iitr.ac.in/" style="color:blue">Indian Institute of Technology Roorkee</a></li><br>
+        <li><a href="https://nitc.ac.in/" style="color:blue">National Institute of Technology, Calicut</a></li><br>
+        <li><a href="https://www.iitkgp.ac.in/" style="color:blue">Indian Institute of Technology, Kharagpur</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+    
+</div>
+
+
+
+
+
+<div id="course6" class="course">
+<h1>Internet of Things (IoT)</h1>
+<p>The Internet of Things (IoT) is transforming our world into a seamlessly connected ecosystem, where everyday objects are infused with intelligence and interactivity. From smart homes and wearable devices to industrial automation and intelligent cities, IoT is revolutionizing the way we live and work. By enabling devices to communicate and collaborate, IoT brings unprecedented convenience, efficiency, and innovation to our fingertips. Imagine a world where your refrigerator can order groceries, your car can suggest the fastest route, and your health is monitored in real-time. Embrace the future with IoT, where the possibilities are as limitless as your imagination.</p>
+<img src="https://svitla.com/uploads_converted/0/2327-iot.webp?1562227999" alt="Internet of Things" class="course-image">
+<h2>Courses</h2>
+<ol style="text-align: left;">
+<li>
+    <h4>Bachelor of Technology (B.Tech) in Computer Science and Engineering with specialization in IoT</h4>
+    <p><b>Duration:</b> 4 years<br><br>
+    <b>Eligibility:</b><br>
+    <ul>
+        <li>Completion of 10+2 or equivalent examination with Mathematics and Physics.</li><br>
+        <li>Minimum aggregate marks of 60% in 10+2 (may vary by institution).</li><br>
+        <li>A qualifying score in entrance exams like <b>JEE Main</b> or <b>State Engineering Entrance Exams</b>.</li>
+    </ul>
+</li>
+<li>
+    <h4>Master of Technology (M.Tech) in IoT</h4>
+    <p><b>Duration:</b> 2 years<br><br>
+    <b>Eligibility:</b><br>
+    <ul>
+        <li>A recognized Bachelor’s degree in Computer Science or related field.</li><br>
+        <li>Minimum aggregate marks of 60% (may vary by institution).</li><br>
+        <li>Some institutions may require a valid <b>GATE</b> score.</li>
+    </ul>
+</li>
+<li>
+    <h4>Diploma in IoT</h4>
+    <p><b>Duration:</b> 1 year<br><br>
+    <b>Eligibility:</b><br>
+    <ul>
+        <li>Completion of undergraduate degree or relevant experience in the field.</li>
+    </ul>
+</li>
+<li>
+    <h4>Ph.D. in IoT</h4>
+    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+    <b>Eligibility:</b><br>
+    <ul>
+        <li>A Master’s degree in IoT or related field.</li><br>
+        <li>Minimum aggregate marks of 60% (may vary by institution).</li><br>
+        <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+    </ul>
+</li>
+<li>
+    <h4>Integrated B.Tech + M.Tech in IoT</h4>
+    <p><b>Duration:</b> 5 years<br><br>
+    <b>Eligibility:</b><br>
+    <ul>
+        <li>Completion of 10+2 or equivalent examination with Mathematics and Physics.</li><br>
+        <li>Minimum aggregate marks of 60% in 10+2 (may vary by institution).</li><br>
+        <li>A qualifying score in entrance exams like <b>JEE Main</b>.</li>
+    </ul>
+</li>
+<li>
+    <h4>Certifications (6 months - 1 year)</h4>
+    <ul style="font-style: italic">
+        <li>Certified IoT Developer</li><br>
+        <li>Certified IoT Security Specialist</li><br>
+        <li>Certified IoT Data Analyst</li><br>
+        <li>Certificate in IoT Applications</li>
+    </ul>
+</li>
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align: left">
+<li><b>Freshers (0-2 years of experience):</b> ₹4 to ₹6 lakhs per annum</li><br>
+<li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹7 to ₹15 lakhs per annum</li><br>
+<li><b>Experienced Professionals (8+ years of experience):</b> ₹15 to ₹30 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+    <ul style="text-align:left" class="links">
+        <li><a href="https://www.iitd.ac.in/" style="color:blue">Indian Institute of Technology Delhi</a></li><br>
+        <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology Madras</a></li><br>
+        <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology Bombay</a></li>
+    </ul>
+    <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+</div>
+</div>
+
+
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        const content = document.getElementById('content');
+        menu.classList.toggle('show');
+        if (menu.classList.contains('show')) {
+            content.classList.add('with-menu');
+        } else {
+            content.classList.remove('with-menu');
+        }
+    }
+
+    function showCourse(courseId) {
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+        document.getElementById(courseId).classList.add('active');
+        document.getElementById('welcome').style.display = 'none';
+        const menu = document.getElementById('menu');
+        if (menu.classList.contains('show')) {
+            toggleMenu();
+        }
+    }
+
+    document.querySelectorAll('.course').forEach(course => {
+        course.classList.remove('active');
+    });
+</script>
+</body>
+</html>

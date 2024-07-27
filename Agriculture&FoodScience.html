@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Agricultural Science</li>
+            <li onclick="showCourse('course2')">Food Science and Technology</li>
+            <li onclick="showCourse('course3')">Horticulture</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore The World of Agriculture and Food Science</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://media.licdn.com/dms/image/C4E12AQEJpBHbccVUbw/article-cover_image-shrink_720_1280/0/1652190146764?e=2147483647&v=beta&t=cLNL9s0xQIL3zc0oMG6LuUYXxhB2m00DaCqiXWlzJRE">
+            <br><br><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhjakCQlFOFqGQ24OJ2KTh_QQNpGjpXyRAdrs08aaUWMZ_sIEZUBZbxkZ0&s=10">
+        </div>
+        <div id="course1" class="course">
+            <h1>Agricultural Science</h1>
+            <p>Agricultural sciences, sciences dealing with food and fibre production and processing.They include the technologies of soil cultivation, crop cultivation and harvesting, animal production, and the processing of plant and animal products for human consumption and use. </p>
+            <img src="https://smarttek.solutions/wp-content/uploads/smart-farming-1170x516.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Agriculture</h4>
+                    <p><b>Duration:</b> 4 years<br><br><b> Description:</b> It involves studying the agricultural sciences. It also includes the use of modern and scientific techniques, land survey, soil science, water resources, and animal management.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Bachelor of Science in Agricultural Marketing Co-Operation</h4>
+                    <p><b>Duration:</b> 4 years<br><br><b>Description:</b>Deals with the marketing aspect of agricultural produce: from farm to fork, so to speak.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the Karnataka Examination Authority. </li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Bachelor of Technology in Agricultural Engineering</h4>
+                    <p><b>Duration:</b> 4 years<br><br><b>Description:</b>The programme deals with agricultural processing as well as the effective production of food. It also includes the use of the latest technology for food processing.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the Karnataka Examination Authority</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Bachelor of Science in Forest Science</h4>
+                    <p><b>Duration:</b>4 years<br><br><b>Description:</b>The programme teaches complexities about forests, organisms that live there, and animal ecology. It also includes studies about how to conserve and protect the forest ecosystem.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>The programme teaches complexities about forests, organisms that live there, and animal ecology. It also includes studies about how to conserve and protect the forest ecosystem. </li><br>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Bachelor of Science in Horticulture</h4>
+                    <p><b>Duration:</b> 3 to 4 years<br><br><b>Description:</b>It deals with the growing of plants, flowers, and fruits for food, comfort, and beauty. Today a major part of food is grown under controlled environment taking care of climatic and soil conditions.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by Karnataka Examination Authority.</li><br>
+                        </ul>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Bachelor of Science in Sericulture</h4>
+                    <p><b>Duration:</b> 3  years<br><br><b>Description:</b>It is a programme that covers an entire ecosystem of silk industry such as raising worms, mulberry cultivation, silk extraction, and even marketing. <br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by Karnataka Examination Authority.</li><br>
+                        </ul>
+                    </p>
+                </li>  
+<li>
+                    <h4>Master of Science in Agriculture</h4>
+                    <p><b>Duration:</b> 2 years<br><br><b>Description:</b>It is a programme that deals with studying the use of plants for the benefit of humans. It’s a broad study aimed at getting complete details about exploiting plants for sustainable production of food.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied B.Sc. or B.Tech in Agriculture or related sciences for admission to this programme..</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore.</li><br>
+                        </ul>
+                    </p>
+                </li>
+<li>
+                    <h4>Master of Science in Forestry</h4>
+                    <p><b>Duration:</b> 2 years<br><br><b>Description:</b>It is a programme that emphasises on research and sustainable use of forest and the related ecosystem. It includes studies on biodiversity, conservation of trees and protection of wildlife. It also teaches how to use forest resources for the benefit of the community.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied B.Sc. or B.Tech in Agriculture or related sciences for admission to this programme.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore.</li><br>
+                        </ul>
+                    </p>
+                </li><li>
+
+                    <h4>Master of Science in Horticulture</h4>
+
+                    <p><b>Duration:</b> 2 years<br><br><b>Description:</b>It is a programme that deals with in-depth coverage of all or some of the specialised branches, sub-branches, and disciplines in horticulture. <br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied B.Sc. or B.Tech in Agriculture or related sciences for admission to this programme.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore.</li><br>
+                        </ul>
+                    </p>
+                </li>
+<li>
+                    <h4>Master of Science in Sericulture</h4>
+                    <p><b>Duration:</b> 2 years<br><br><b>Description:</b>It is a programme that deals with in-depth coverage of silk rearing and the related business.<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied B.Sc. or B.Tech in Agriculture or related sciences for admission to this programme.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore.</li><br>
+                        </ul>
+                    </p>
+                </li>
+<li>
+                    <h4>Master of Technology in Agriculture Engineering</h4>
+                    <p><b>Duration:</b> 2 years<br><br><b>Description:</b>It is a programme that deals with getting maximum benefits from the existing agriculture resources. .<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>One needs to have studied B.Sc. or B.Tech in Agriculture or related sciences for admission to this programme.</li><br>
+                            <li>All admissions are based on the entrance exam conducted by the University of Agricultural Sciences, Bangalore.</li><br>
+                        </ul>
+                    </p>
+                </li> 
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b> Agronomist:</b> ₹3 to ₹6 lakhs per annum</li><br>
+                <li><b>Plant beeder:</b> ₹4 to ₹8 lakhs per annum</li><br>
+                <li><b>Agricultural Officer:</b> ₹3 to ₹5 lakhs per annum with an average of ₹4.4 lakhs per annum</li><br>
+<li><b>Farm Manager:</b> ₹4 to ₹8 lakhs per annum</li><br>
+<li><b>College of Agriculture Assistant professor:</b> ₹1.8 to ₹6 lakhs per annum with an average salary of ₹3.1 per annum for employees with less than 1-6 years of experience.</li><br>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://education.icar.gov.in/Univ_Details_New?Univ=XNU84HGCp+L6/aZMW/hMc/F591H9USwn" style="color:blue">Indian Council of Agricultural Research Institute</a></li><br>
+                <li><a href="https://demo.uasbangalore.edu.in/en/academics/college-of-agriculture-bangalore/" style="color:blue">GKVK, Banglore</a></li><br>
+            </ul>
+            <a href="https://agris.fao.org/" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course2" class="course">
+             <h1>Food Science and Technology</h1>
+            <p>Food science and technology is a multidisciplinary field that uses scientific knowledge and innovation to improve food processing and preservation for human consumption.</p>
+            <img src="https://img.freepik.com/premium-photo/food-tech-science-modern-smart-agriculture-food-technology-future-concept_817921-5614.jpg?w=1060" alt="Course 2" class="course-image">
+<h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>B.Sc. in Food Science and Technology</h4>
+<p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects.</li><br>
+                            <li>Some institutes may conduct their own entrance exams; others accept scores from national/state level exams like JEE Main, MHT CET, or university-specific exams.</li>
+                        </ul>
+                    </p>
+                </li>        
+ <li>
+                    <h4>M.Sc. in Food Science and Technology</h4>
+<p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Food Science, Chemistry, Biochemistry, Agriculture, or related fields.</li><br>
+                            <li>Entrance exams like GATE, ICAR AIEEA, or university-specific exams..</li>
+                        </ul>
+                    </p>
+                </li> 
+ <li>
+                    <h4>B.Tech in Food Technology</h4>
+<p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>needs to have studied Science at 12th/+2/PUC level or equivalent with physics, chemistry, and biology as the main subjects</li><br>
+                            <li>JEE Main, JEE Advanced, state-level engineering entrance exams, or university-specific exams.</li>
+                        </ul>
+                    </p>
+                </li> 
+ <li>
+                    <h4>M.Tech in Food Technology</h4>
+<p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>B.Tech/B.E in Food Technology, Chemical Engineering, Biotechnology, or related fields.</li><br>
+                            <li>GATE or university-specific entrance exams.</li>
+                        </ul>
+                    </p>
+                </li>  <li>
+                    <h4>Diploma in Food Technology </h4>
+<p><b>Duration:</b>1-3 years(varies)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>10th pass or 10+2 with Science stream (varies by program).</li><br>
+                            <li>Some institutes may conduct their own entrance exams.</li>
+                        </ul>
+                    </p>
+                </li> 
+</ol>
+<h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b> Entry-level:</b> ₹2.5 to ₹4 lakhs per annum</li><br>
+                <li><b>Mid-level:</b> ₹4 to ₹8 lakhs per annum</li><br>
+                <li><b>Senior-level:</b> ₹8 to ₹15 lakhs per annum </li><br>
+ <li><b>Top-level:</b> ₹15 to ₹30 lakhs per annum </li><br>
+</ul>
+<h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href=https://niftem.ac.in/ style="color:blue">National Institute of Food Technology Entrepreneurship and Management (NIFTEM)</a></li><br>
+                <li><a href=https://www.cftri.res.in style="color:blue">Central Food Technological Research Institute (CFTRI)</a></li><br>
+            </ul>
+            <a href="https://www.ift.org/career-development/ift-salary-surveys" class="button"><i>For more information…</i></a>          
+        </div> 
+        <div id="course3" class="course">
+            <h1>Horticulture</h1>
+            <p>Horticulture is the scientific study of agriculture and plant cultivation, including preparing soil for planting. Horticulture courses can include the study of plants for food, medicine, aesthetics, or ornamentals, as well as breeding techniques for vegetables, fruits, cereals, and other plants. Horticulture courses can lead to careers as horticulturists, plantation managers, floriculturists, and more. </p>
+            <img src="https://cdn.britannica.com/53/166053-050-88676FD4/Interior-view-commercial-horticulture-greenhouse.jpg?w=320&h=240" alt="Course 3" class="course-image">
+<h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>B.Sc. in Horticulture</h4>
+<p><b>Duration:</b> 3 to 4years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>10+2 with Science stream (Physics, Chemistry, Biology)</li><br>
+                            <li>Some institutes conduct their own entrance exams; others accept scores from national/state level exams like ICAR AIEEA, EAMCET, or university-specific exams.</li>
+                        </ul>
+                    </p>
+                </li>        
+ <li>
+                    <h4>M.Sc. in Horticulture</h4>
+<p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Horticulture, Agriculture, Botany, or related fields.</li><br>
+                            <li>Entrance exams like ICAR AIEEA (PG), university-specific exams.</li>
+                        </ul>
+                    </p>
+                </li> 
+ <li>
+                    <h4>Ph.D. in Horticulture</h4>
+<p><b>Duration:</b> 3 to 5years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>M.Sc. in Horticulture or related field</li><br>
+                            <li>Entrance exams conducted by universities or institutions like ICAR AICE-JRF/SRF (Ph.D.).</li>
+                        </ul>
+                    </p>
+                </li>
+</ol>
+<h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b> Entry-level:</b> ₹2 to ₹ lakhs per annum</li><br>
+                <li><b>Mid-level:</b> ₹3 to ₹4.5 lakhs per annum</li><br>
+                <li><b>Senior-level:</b> ₹4.5 to ₹6 lakhs per annum </li><br>
+ <li><b>Top-level:</b> ₹6 to ₹8.5+ lakhs per annum </li><br>
+</ul>
+<h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href=www.iari.res.in style="color:blue">Indian Agricultural Research Institute (IARI), New Delhi</a></li><br>
+                <li><a href=www.nhrdf.org style="color:blue">National Horticultural Research and Development Foundation (NHRDF), New Delhi</a></li><br>
+            </ul>
+            <a href=http://www.horticulturalsociety.in class="button"><i>For more information…</i></a>          
+        </div>     
+      
+</div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

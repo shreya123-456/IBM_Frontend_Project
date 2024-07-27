@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Journalism</li>
+            <li onclick="showCourse('course2')">Public Relations</li>
+            <li onclick="showCourse('course3')">Media Studies</li>
+            <li onclick="showCourse('course4')">Film and Television</li>
+            <li onclick="showCourse('course5')">Advertising</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Communications and Media</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://www.webtrainings.in/wp-content/uploads/2021/07/Final-Image.png">
+            <br><br><img src="https://www.ibef.org/assets/images/charts/media-and-entertainment.jpg">
+        </div>
+        <div id="course1" class="course">
+            <h1>Journalism</h1>
+            <p>Journalism is the practice of gathering, assessing, creating, and presenting news and information. It involves various processes such as investigating events, conducting interviews, verifying facts, and delivering stories in various formats, including articles, broadcasts, and digital media.</p>
+            <img src="https://static-asset.amac.us/wp-content/uploads/2023/06/29142151/journalism.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Journalism(BA)</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.</li><br>
+                            <li>A minimum percentage in the 10+2 examination, usually around 50-60%, depending on the institution.</li><br>
+                            <li> Some universities and colleges may require candidates to clear entrance exams specific to journalism or mass communication programs.</b></li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science In Investigative Journalism</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li> Candidates must have completed a bachelor's degree in journalism, mass communication, or a related field from a recognized university.</li><br>
+                            <li>A minimum percentage in the bachelor's degree, usually around 50-60%, depending on the institution.</li><br>
+                            <li>Some universities and colleges may require candidates to clear entrance exams specific to journalism or mass communication programs.</li>
+                        </ul>
+                    </p>
+                </li>    
+                 <li>
+                    <h4>Certifications For Digital Journalism</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate Programs by Indian Institutes</li><br>
+                        <li>Online Certification Programs(Eg: edX,Udemy)</li><br>
+                        <li>International Certifications(Eg: Poynter Institute,ICFJ)</li><br>
+                     </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-5 years of experience):</b> ₹2,00,000 to ₹4,00,000 per annum</li><br>
+                <li><b>Mid-Level Journalists (5-10 years of experience):</b> ₹5,00,000 to ₹10,00,000 per annum</li><br>
+                <li><b>Experienced Journalists (10+ years of experience):</b> ₹10,00,000 to ₹20,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="http://www.iimc.gov.in/" style="color:blue">Indian Institute of Mass Communication (IIMC)</a></li><br>
+                <li><a href="https://www.simc.edu/" style="color:blue">Symbiosis Institute of Media and Communication (SIMC), Pune</a></li><br>
+                <li><a href="http://www.asianmedia.org.in/" style="color:blue">Asian College of Journalism (ACJ), Chennai</a></li><br>
+                <li><a href="http://www.iijnm.org/" style="color:blue">Indian Institute of Journalism & New Media (IIJNM), Bangalore</a></li><br>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+  <div id="course2" class="course">
+            <h1>Public Relations</h1>
+            <p>A Public Relations (PR) course under Communication and Media focuses on teaching students how to manage and enhance the image and reputation of organizations, individuals, or brands through strategic communication.Understanding the core principles of public relations, including media relations, crisis management.</p>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.vhVCq3ivFAAmQhpnZGumhQHaEG&pid=Api&P=0&h=180" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Public Relations(BA)</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.</li><br>
+                            <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                            <li> Some institutions may conduct entrance exams or interviews as part of the admission process.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science In Strategic Communication</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li> Candidates usually need a bachelor's degree in communication, media studies, journalism, or a related field from a recognized university.</li><br>
+                            <li>A minimum percentage in the bachelor's degree, usually around 50-60%, depending on the institution.</li><br>
+                            <li> Some universities or colleges might require candidates to pass an entrance exam or undergo a personal interview as part of the admission process.</li>
+                        </ul>
+                    </p>
+                </li>    
+                 <li>
+                    <h4>Certifications For Crisis Communication</h4>
+                    <ul style="font-style: italic">
+                        <li>Crisis Communication Certification by the International Association of Business Communicators (IABC)</li><br>
+                        <li>Crisis Communication and Reputation Management Certificate by the Public Relations Society of America (PRSA)</li><br>
+                        <li>Crisis Management Certification by the Institute for Crisis Management (ICM)</li><br>
+                         <li>Certified Crisis Communication Professional (CCCP) by the Center for Crisis Communication</li><br>
+                         <li>Strategic Crisis Communication Certification by Coursera</li><br>
+                     </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-5 years of experience):</b>  ₹3,00,000 to ₹5,00,000 per annum</li><br>
+                <li><b>Mid-Level Journalists (5-10 years of experience):</b> ₹6,00,000 to ₹12,00,000 per annum</li><br>
+                <li><b>Experienced Journalists (10+ years of experience):</b>  ₹12,00,000 to ₹20,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="http://www.iimc.gov.in/" style="color:blue">Indian Institute of Mass Communication (IIMC)</a></li><br>
+                <li><a href="https://www.simc.edu/" style="color:blue">Symbiosis Institute of Media and Communication (SIMC), Pune</a></li><br>
+                <li><a href="http://www.asianmedia.org.in/" style="color:blue">Asian College of Journalism (ACJ), Chennai:</a></li><br>
+                <li><a href="https://www.mica.ac.in/" style="color:blue">Mudra Institute of Communications (MICA), Ahmedabad:</a></li><br>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+  <div id="course3" class="course">
+            <h1>Media Studies</h1>
+            <p>Media Studies is an academic discipline that explores the content, history, and effects of various media, including print, digital, and electronic forms. It examines how media influences society, shapes public opinion, and affects cultural and social norms.The field often intersects with disciplines such as sociology, psychology, and political science, providing a comprehensive understanding of the media landscape and its impact on the world.</p>
+            <img src="https://www.ucas.com/sites/default/files/md-6272-subject-guides-summary-card-media-studies.png" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Media Studies(BA)</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.</li><br>
+                            <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                            <li> Delhi University Entrance Test (DUET) for certain colleges under the University of Delhi.</li><br>
+                            <li>Jamia Millia Islamia Entrance Test for its media programs.</li><br>
+                            <li>Some institutions may consider scores from national or state-level entrance exams related to mass communication or media studies.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Arts in Media and Communication</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li> Candidates usually need a bachelor's degree in communication, media studies, journalism, or a related field from a recognized university.</li><br>
+                            <li>A minimum percentage in the bachelor's degree, usually around 50-60%, depending on the institution.</li><br>
+                            <li> Some universities or colleges might require candidates to pass an entrance exam or undergo a personal interview as part of the admission process.</li>
+                        </ul>
+                    </p>
+                </li>    
+                 <li>
+                    <h4>Certifications for Digital Media Production</h4>
+                    <ul style="font-style: italic">
+                        <li>Google Digital Garage - Fundamentals of Digital Marketing (IABC)</li><br>
+                        <li>Coursera - Digital Media and Marketing Strategies by the University of Illinois</li><br>
+                        <li>edX - Digital Media Production by RIT (Rochester Institute of Technology)</li><br>
+                         <li>LinkedIn Learning - Learning Digital Media Production</li><br>
+                         <li>Udacity - Digital Media Production Nanodegree</li><br>
+                     </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-5 years of experience):</b> ₹3,00,000 to ₹5,00,000 per annum</li><br>
+                <li><b>Mid-Level Journalists (5-10 years of experience):</b> ₹6,00,000 to ₹12,00,000 per annum</li><br>
+                <li><b>Experienced Journalists (10+ years of experience):</b>  ₹12,00,000 to ₹20,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="http://www.iimc.gov.in/" style="color:blue">Indian Institute of Mass Communication (IIMC)</a></li><br>
+                <li><a href="https://www.simc.edu/" style="color:blue">Symbiosis Institute of Media and Communication (SIMC), Pune</a></li><br>
+                <li><a href="http://www.asianmedia.org.in/" style="color:blue">Asian College of Journalism (ACJ), Chennai:</a></li><br>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+ <div id="course4" class="course">
+            <h1>Film and Television</h1>
+            <p>A Film and Television course focuses on the art and industry of creating and producing visual media content. It covers various aspects of filmmaking and television production, including scriptwriting, directing, cinematography, editing, and sound design.The course often includes hands-on experience with equipment and software, providing practical skills for careers in film and television. Additionally, students explore industry trends and develop creative and technical competencies essential for successful careers in media.</p>
+            <img src="https://filmdayton.com/wp-content/uploads/2015/10/Film_Production-1.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Fine Arts in Film Production(BA)</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.</li><br>
+                            <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                            <li> Film and Television Institute of India (FTII), Pune: Conducts an entrance exam and interview for its programs.</li><br>
+                            <li> Satyajit Ray Film and Television Institute (SRFTI), Kolkata: Conducts an entrance exam and interview.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Fine Arts in Screenwriting</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li> Candidates usually need a bachelor's degree in any field from a recognized university. A background in writing, literature, film, or media can be advantageous.</li><br>
+                            <li>A minimum percentage in the bachelor's degree, usually around 50-60%, depending on the institution.</li><br>
+                            <li>Most programs require candidates to submit a portfolio of their writing, which may include scripts, short stories, or other relevant work.</li><br>
+                            <li>Some institutions may conduct interviews or require candidates to pass a written test as part of the admission process.</li>
+                        </ul>
+                    </p>
+                </li>    
+                 <li>
+                    <h4>Certifications For Cinematography</h4>
+                    <ul style="font-style: italic">
+                        <li>Certified Professional Cinematographer (CPC) by the International Cinematographers Guild (ICG)</li><br>
+                        <li>Cinematography Certificate by the New York Film Academy (NYFA)</li><br>
+                        <li>Cinematography Certification by the American Film Institute (AFI)</li><br>
+                         <li>Digital Cinematography Certification by the International School of Film and Television (ISFT)</li><br>
+                         <li>Film and Television Production Certificate by Coursera (offered in partnership with institutions such as the University of London)</li><br>
+                     </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-5 years of experience):</b>₹2,50,000 to ₹5,00,000 per annum</li><br>
+                <li><b>Mid-Level Journalists (5-10 years of experience):</b> ₹6,00,000 to ₹12,00,000 per annum</li><br>
+                <li><b>Experienced Journalists (10+ years of experience):</b>  ₹12,00,000 to ₹25,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.ftii.ac.in/" style="color:blue">Film and Television Institute of India (FTII), Pune:</a></li><br>
+                <li><a href="https://www.srfti.ac.in/" style="color:blue">Satyajit Ray Film and Television Institute (SRFTI), Kolkata</a></li><br>
+                <li><a href="https://www.whistlingwoods.net/" style="color:blue">Whistling Woods International, Mumbai</a></li><br>
+                <li><a href="https://www.nsd.gov.in/" style="color:blue">National School of Drama (NSD), New Delhi</a></li><br>
+                <li><a href="https://www.aaft.com/" style="color:blue">Asian Academy of Film and Television (AAFT), Noida</a></li><br>
+    
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+ <div id="course5" class="course">
+            <h1>Advertising</h1>
+            <p>Advertising is a strategic communication process aimed at promoting products, services, or ideas to a targeted audience through various media channels. It involves creating compelling messages and visuals to capture attention, generate interest, and drive consumer action. Advertising strategies often include market research, campaign development, media planning, and performance analysis to ensure effectiveness and reach. The field encompasses diverse platforms such as television, radio, print, digital media, and outdoor advertising, with the goal of influencing consumer behavior and building brand awareness.</p>
+            <img src="https://penji.co/wp-content/uploads/2018/11/Outdoor-Advertising.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Advertising(BA)</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Candidates must have completed their 10+2 (or equivalent) education from a recognized board.</li><br>
+                            <li>Most institutions require a minimum percentage in the 10+2 examination, usually around 50-60%.</li><br>
+                            <li> Delhi University (DU): Conducts an entrance exam for some of its media programs.</li><br>
+                            <li> National Institute of Design (NID): Offers entrance exams for design programs which may include advertising.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Advertising and Marketing Communications</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li> Candidates usually need a bachelor’s degree in advertising, marketing, communication, business, or a related field from a recognized university.</li><br>
+                            <li>A minimum percentage in the bachelor's degree, usually around 50-60%, depending on the institution.</li><br>
+                            <li>Some institutions may require candidates to pass an entrance exam or participate in an interview as part of the admission process. Specific entrance exams or requirements can vary by institution.</li>
+                        </ul>
+                    </p>
+                </li>    
+                 <li>
+                    <h4>Certifications For Creative Advertising</h4>
+                    <ul style="font-style: italic">
+                        <li>Certified Advertising Specialist (CAS) by the International Association of Advertising Agencies (IAAA)</li><br>
+                        <li>Digital Advertising Certification by Google</li><br>
+                        <li>Creative Advertising Certificate by the School of Visual Arts (SVA), New York</li><br>
+                         <li>Creative Advertising Certification by Coursera (offered in partnership with institutions such as the University of Illinois)</li><br>
+                         <li>LinkedIn Learning - Creative Advertising Courses</li><br>
+                     </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-5 years of experience):</b>₹3,00,000 to ₹6,00,000 per annum</li><br>
+                <li><b>Mid-Level Journalists (5-10 years of experience):</b>₹7,00,000 to ₹15,00,000 per annum</li><br>
+                <li><b>Experienced Journalists (10+ years of experience):</b>  ₹15,00,000 to ₹30,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="http://www.iimc.gov.in/" style="color:blue">Indian Institute of Mass Communication (IIMC)</a></li><br>
+                <li><a href="https://www.simc.edu/" style="color:blue">Symbiosis Institute of Media and Communication (SIMC), Pune</a></li><br>
+                <li><a href="https://www.xaviercomm.org/" style="color:blue">Xavier Institute of Communications (XIC), Mumbai</a></li><br>
+                <li><a href="https://www.nid.edu/" style="color:blue">National Institute of Design (NID), Ahmedabad</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

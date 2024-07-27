@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Entrepreneurship and Innovation</li>
+            <li onclick="showCourse('course2')">Sustainable Business</li>
+            <li onclick="showCourse('course3')">Digital marketing</li>
+            <li onclick="showCourse('course4')">Supply Chain Management</li>
+            <li onclick="showCourse('course5')">Financial Technology(Fintech)</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Business & Management</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://www.grandviewresearch.com/static/img/research/global-business-process-management-market.png">
+            <br><br><img src="https://www.kbvresearch.com/kcfinder/upload/images/business-process-management-market-share-analysis.jpg">
+        </div>
+        <div id="course1" class="course">
+            <h1>Entrepreneurship and Innovation</h1>
+            <p>The Business and Management domain covers a broad spectrum of subjects focused on understanding, managing, 
+                and leading business enterprises. This domain equips students with essential skills in administration, strategic planning, 
+                and operational management, making them well-suited for leadership roles in various organizations.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSe9bJBqolA4guoW9KLqUeUP71HbjNBYVxtA&s" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Business Administration (BBA) in Entrepreneurship</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 with a minimum percentage (e.g., 50%).</li><br>
+                            <li>Some institutions require a score in entrance exams like JEE or equivalent.</li><br>
+                            <li>English proficiency (some colleges may require an English test).</li><br>
+                            <li>Minimum age requirement (often 17 years and above).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Innovation Management</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Business Administration, Management, or a related field</li><br>
+                            <li>Relevant work experience (often 1-2 years).</li><br>
+                            <li>Good academic record with a minimum percentage (e.g., 50%).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certificate in Startup Management</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree or equivalent.</li><br>
+                            <li>Some programs may accept candidates with significant professional experience.</li><br>
+                            <li>Basic understanding of business principles.</li><br>
+                            <li>Letter of recommendation (may be required for some programs).</li>
+                        </ul>
+                    </p>
+                </li>           
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Entry-Level:</b>₹5,00,000 - ₹8,00,000 per annum</li><br>
+                <li><b>Mid-Level:</b> ₹10,00,000 - ₹15,00,000 per annum</li><br>
+                <li><b>Senior-Level:</b>₹20,00,000 - ₹40,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.isb.edu/" style="color:blue">Indian School of Business (ISB), Hyderabad </a></li><br>
+                <li><a href="https://www.spjimr.org/" style="color:blue">S.P. Jain Institute of Management and Research (SPJIMR), Mumbai</a></li><br>
+                <li><a href="https://www.nmims.edu/" style="color:blue">Narsee Monjee Institute of Management Studies (NMIMS), Mumbai</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/business-management-studies/colleges/entrepreneurship-colleges-india" class="button"><i>For more information...</i></a>
+            
+        </div>
+        <div id="course2" class="course">
+            <h1>Sustainable Business</h1>
+            <p>Sustainable Business focuses on integrating environmental, social, and economic considerations
+                 into business strategies. This domain aims to equip students with the knowledge to promote sustainability 
+                 and corporate responsibility within organizations.</p>
+            <img src="https://cdn.prod.website-files.com/604915c3f8006b714c1fa12d/618bf0216ebd566711b2d912_Untitled%20design(36).jpg" alt="Course 2" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Sustainable Business</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 with a minimum percentage (e.g., 50%).</li><br>
+                            <li>Some institutions require a score in entrance exams like JEE or equivalent.</li><br>
+                            <li>English proficiency (some colleges may require an English test).</li><br>
+                            <li>Interest or background in environmental science or related fields.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Environmental and Resource Management</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Environmental Science, Business, or a related field.</li><br>
+                            <li>Relevant work experience (often 1-2 years).</li><br>
+                            <li>Good academic record with a minimum percentage (e.g., 50%).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certificate in Corporate Sustainability</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree or equivalent.</li><br>
+                            <li>Professional experience in business or sustainability.</li><br>
+                            <li>Basic understanding of sustainability concepts.</li><br>
+                            <li>Letter of recommendation (may be required for some programs).</li>
+                        </ul>
+                    </p>
+                </li>           
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Entry-Level:</b>₹6,00,000 - ₹9,00,000 per annum</li><br>
+                <li><b>Mid-Level:</b>₹12,00,000 - ₹18,00,000 per annum</li><br>
+                <li><b>Senior-Level:</b>₹25,00,000 - ₹45,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.tiss.edu/" style="color:blue">Tata Institute of Social Sciences (TISS), Mumbai</a></li><br>
+                <li><a href="https://www.iimcal.ac.in/" style="color:blue">Indian Institute of Management Calcutta (IIMC)</a></li><br>
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University, Noida</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course3" class="course">
+            <h1>Digital Marketing</h1>
+            <p>Digital Marketing involves strategies and techniques used to promote products or services through digital 
+                channels. This domain covers online marketing, social media, search engine optimization (SEO), and data analytics 
+                to drive business growth in the digital landscape.</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV67v8Sw7x_LHrFHyA8mJQtNnk3nt87KqG0Q&s" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Marketing with a focus on Digital Marketing</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 with a minimum percentage (e.g., 50%).</li><br>
+                            <li>Some institutions may require entrance exam scores.</li><br>
+                            <li>English proficiency (some colleges may require an English test).</li><br>
+                            <li>Basic knowledge of marketing principles.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Digital Marketing</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Marketing, Business Administration, or a related field.</li><br>
+                            <li>Relevant work experience (often 1-2 years).</li><br>
+                            <li>Good academic record with a minimum percentage (e.g., 50%).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certificate in Social Media Marketing</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree or equivalent.</li><br>
+                            <li>Professional experience or interest in marketing.</li><br>
+                            <li>Basic understanding of social media platforms.</li><br>
+                            <li>Letter of recommendation (may be required for some programs).</li>
+                        </ul>
+                    </p>
+                </li>           
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Entry-Level:</b>₹4,00,000 - ₹7,00,000 per annum</li><br>
+                <li><b>Mid-Level:</b>₹8,00,000 - ₹14,00,000 per annum</li><br>
+                <li><b>Senior-Level:</b>₹18,00,000 - ₹35,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.imt.edu/" style="color:blue">Institute of Management Technology (IMT), Ghaziabad</a></li><br>
+                <li><a href="https://digitalmarketinginstitute.com/" style="color:blue">Digital Marketing Institute, Delhi </a></li><br>
+                <li><a href="https://www.iide.co/" style="color:blue">Indian Institute of Digital Education (IIDE), Mumbai</a></li>
+            </ul>
+            <a href="https://collegedunia.com/courses/digital-marketing/colleges" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course4" class="course">
+            <h1>Supply Chain Management</h1>
+            <p>Supply Chain Management deals with the end-to-end process of moving products from manufacturers to consumers. 
+                This domain involves logistics, procurement, inventory management, and distribution, ensuring efficient and 
+                cost-effective operations.</p>
+            <img src="https://cdn.sergroup.com/assets/images/f/supply-chain-management-60wb7rbj9g48b9q.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Supply Chain and Operations Management</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 with a minimum percentage (e.g., 50%).</li><br>
+                            <li>Some institutions may require entrance exam scores.</li><br>
+                            <li>English proficiency (some colleges may require an English test).</li><br>
+                            <li>Basic knowledge of business operations.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Supply Chain Management</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Supply Chain Management, Business Administration, or a related field.</li><br>
+                            <li>Relevant work experience (often 1-2 years).</li><br>
+                            <li>Good academic record with a minimum percentage (e.g., 50%).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certificate in Logistics and Supply Chain Analytics</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree or equivalent.</li><br>
+                            <li>Professional experience in logistics or supply chain.</li><br>
+                            <li>Basic understanding of analytics tools.</li><br>
+                            <li>Letter of recommendation (may be required for some programs).</li>
+                        </ul>
+                    </p>
+                </li>    
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Entry-Level:</b>₹5,00,000 - ₹8,00,000 per annum</li><br>
+                <li><b>Mid-Level:</b> ₹10,00,000 - ₹15,00,000 per annum</li><br>
+                <li><b>Senior-Level:</b>₹20,00,000 - ₹35,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.nmims.edu/" style="color:blue">Narsee Monjee Institute of Management Studies (NMIMS), Mumbai</a></li><br>
+                <li><a href="https://www.iimb.ac.in/" style="color:blue">Indian Institute of Management Bangalore (IIMB)</a></li><br>
+                <li><a href="https://www.imt.edu/" style="color:blue">Institute of Management Technology (IMT), Ghaziabad</a></li>
+            </ul>
+            <a href="https://collegedunia.com/commerce/supply-chain-management-colleges" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course5" class="course">
+            <h1>Financial Technology (FinTech)</h1>
+            <p>Financial Technology (FinTech) focuses on technological innovations in financial services. 
+                This domain includes blockchain, cryptocurrency, digital payments, and other technologies transforming the finance industry.</p>
+            <img src="https://www.mindinventory.com/blog/wp-content/uploads/2023/09/cloud-computing-in-fintech-industry.webp" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Science in Finance with a focus on FinTech</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 with a minimum percentage (e.g., 50%).</li><br>
+                            <li>Some institutions may require entrance exam scores.</li><br>
+                            <li>Basic understanding of finance principles.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Financial Technology</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree in Finance, Business, or a related field.</li><br>
+                            <li>Relevant work experience (often 1-2 years).</li><br>
+                            <li>Good academic record with a minimum percentage (e.g., 50%).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certificate in Blockchain and Financial Services</h4>
+                    <p><b>Duration:</b> 6 months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor’s degree or equivalent.</li><br>
+                            <li>Professional experience or interest in finance or technology.</li><br>
+                            <li>Basic understanding of blockchain concepts.</li><br>
+                            <li>Letter of recommendation (may be required for some programs).</li>
+                        </ul>
+                    </p>
+                </li>    
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Entry-Level:</b> ₹6,00,000 - ₹9,00,000 per annum</li><br>
+                <li><b>Mid-Level:</b>₹12,00,000 - ₹18,00,000 per annum</li><br>
+                <li><b>Senior-Level:</b>₹25,00,000 - ₹45,00,000+ per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT), Bombay</a></li><br>
+                <li><a href="https://www.snu.edu.in/" style="color:blue">Shiv Nadar University, Greater Noida</a></li><br>
+                <li><a href="https://www.bvuniversity.edu.in/" style="color:blue">Bharati Vidyapeeth University, Pune</a></li>
+            </ul>
+            <a href="https://www.collegedekho.com/mba/fintech-colleges-in-india/#:~:text=Top%20FinTech%20Colleges%20in%20India%20are%20Chandigarh%20University%2C%20KL%20University,for%20Business%20and%20Management%2C%20Pune" class="button"><i>For more information...</i></a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

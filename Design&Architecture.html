@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Architecture</li>
+            <li onclick="showCourse('course2')">Interior Design</li>
+            <li onclick="showCourse('course3')">Landscape Architecture</li>
+            <li onclick="showCourse('course4')">Graphic Design</li>
+            <li onclick="showCourse('course5')">Fashion Design</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Design & Architecture</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://www.verifiedmarketreports.com/images/01-24/global-architectural-services-market-2018-by-manufacturers-countries-type-and-application-forecast-to-2023.webp">
+            <br><br><img src="https://www.technavio.com/image/20230417110101_abstract_2023_v2.jpg.webp?v4.1.16">
+        </div>
+        <div id="course1" class="course">
+            <h1>Architecture</h1>
+            <p>Architecture is the art and science of designing and creating spaces and structures that are both functional and aesthetically pleasing. It blends creativity with technical skills to shape the built environment, influencing how people experience and interact with their surroundings. From towering skyscrapers to cozy homes, architecture plays a crucial role in reflecting cultural values and enhancing everyday life.</p>
+            <img src="https://bltawards.com/wp2/wp-content/uploads/2024/01/header-14-scaled.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Architecture (B.Arch)</h4>
+                    <p><b>Duration:</b> 5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>NATA</b>(National Aptitude Test in Architecture) or <b>JEE Main Paper 2</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Architecture (M.Arch)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Architecture (B.Arch).</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>GATE</b> score in Architecture and Planning.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Architecture</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Architecture</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Architecture (M.Arch) or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Integrated B.Arch + M.Arch</h4>
+                    <p><b>Duration:</b> 5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>NATA</b> or <b>JEE Main Paper 2</b>.</li>
+                        </ul>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Urban Design</li><br>
+                        <li>Certificate in Sustainable Design</li><br>
+                        <li>Certificate in Environmental Planning</li><br>
+                        <li>Certificate in Architectural Visualization</li><br>
+                        <li>Certificate in Building Information Modeling (BIM)</li><br>
+                        <li>Certificate in Landscape Architecture</li><br>
+                        <li>Certificate in Interior Design</li><br>
+                        <li>Certificate in Green Building Design</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3.5 to ₹5.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 to ₹12 lakhs per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹12 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.iitr.ac.in/" style="color:blue">Indian Institute Of Technology Roorkee, Uttarakhand</a></li><br>
+                <li><a href="https://nitc.ac.in/" style="color:blue">National Institute of Technology, Calicut</a></li><br>
+                <li><a href="https://www.iitkgp.ac.in/" style="color:blue">Indian Institute of Technology, Kharagpur</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>           
+        </div>
+
+
+
+
+        <div id="course2" class="course">
+            <h1>Interior Design</h1>
+            <p>Interior design is the art and science of enhancing the interior of a space to create a harmonious and aesthetically pleasing environment. It involves a creative blend of color, texture, and furnishings to transform spaces into functional and inspiring havens. From cozy homes to stylish offices and luxurious hotels, interior design breathes life into architecture, reflecting the personality and lifestyle of its inhabitants. It marries form and function, ensuring that every corner not only looks stunning but also serves a purpose. With an eye for detail and a passion for beauty, interior designers turn visions into reality, creating spaces that evoke emotion and captivate the senses.</p>
+            <img src="https://brabbu.com/blog/wp-content/uploads/2021/07/DSP-Design-Mumbai.jpg" alt="Course 2" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Interior Design (B.Des or B.Sc in Interior Design)</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>All India Design Aptitude Test</b> or <b>UCEED (Undergraduate Common Entrance Examination for Design)</b></li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Diploma in Interior Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Advanced Diploma in Interior Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may also accept candidates with a relevant diploma in interior design.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Master of Interior Design (M.Des or M.Sc in Interior Design)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Interior Design or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>NID entrance test</b>, <b>UCEED</b>, <b>SEED</b>, <b>NIFT</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Ph.D. in Interior Design</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Interior Design or a related field.</li><br>
+                            <li>Minimum aggregate marks of 55% in the postgraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                        </ul>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Interior Design</li><br>
+                        <li>Advanced Certificate in Interior Design</li><br>
+                        <li>Certificate in Interior Decoration</li><br>
+                        <li>Certificate in Residential Interior Design</li><br>
+                        <li>Certificate in Commercial Interior Design</li><br>
+                        <li>Certificate in Furniture Design</li><br>
+                        <li>Certificate in Sustainable Interior Design</li><br>
+                        <li>Certificate in Interior Styling</li><br>
+                        <li>Certificate in Lighting Design for Interiors</li><br>
+                        <li>Certificate in Interior Design and Space Planning</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2.5 to ₹4.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Interior Designers (3-7 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+                <li><b>Experienced Interior Designers (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.iiad.edu.in/" style="color:blue">Indian Institute of Art and Design (IIAD), New Delhi</a></li><br>
+                <li><a href="https://www.nid.edu/home" style="color:blue">National Institute of Design (NID), Ahmedabad</a></li><br>
+                <li><a href="https://cept.ac.in/" style="color:blue">CEPT University, Ahmedabad</a></li><br>
+                <li><a href="https://www.pearlacademy.com/campuses/mumbai" style="color:blue">Pearl Academy, Mumbai</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/design/interior-design/colleges/colleges-india" class="button"><i>For more information...</i></a>           
+        </div>
+
+        
+
+
+        <div id="course3" class="course">
+            <h1>Landscape Architecture</h1>
+            <p>Landscape architecture is a visionary blend of art and science, shaping the natural and built environment to create stunning, sustainable spaces that inspire and rejuvenate. It involves the strategic design of outdoor areas, such as parks, gardens, campuses, and urban plazas, harmonizing natural elements with human activity. Through the thoughtful arrangement of plants, water features, pathways, and structures, landscape architects craft serene and functional environments that enhance the quality of life. They masterfully integrate ecological principles and aesthetic values, turning ordinary landscapes into extraordinary sanctuaries where nature and design coexist in perfect balance, captivating the eye and soul alike.</p>
+            <img src="https://land8.com/wp-content/uploads/2017/07/Sustainable.jpg" alt="Course 3" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Landscape Architecture (B.L.Arch or B.Sc in Landscape Architecture)</h4>
+                    <p><b>Duration:</b> 4-5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>NATA</b> (National Aptitude Test in Architecture) or <b>JEE Main Paper 2</b> (in some institutions).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Landscape Architecture (M.L.Arch or M.Sc in Landscape Architecture)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Landscape Architecture, Architecture (B.Arch), or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>GATE</b> score in Architecture and Planning or equivalent entrance exam.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Landscape Architecture</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Landscape Architecture</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Landscape Architecture or a related field.</li><br>
+                            <li>Minimum aggregate marks of 55% in the postgraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Landscape Architecture</li><br>
+                        <li>Certificate in Urban Landscape Design</li><br>
+                        <li>Certificate in Sustainable Landscape Design</li><br>
+                        <li>Certificate in Environmental Landscape Design</li><br>
+                        <li>Certificate in Garden and Landscape Design</li><br>
+                        <li>Certificate in Landscape Planning and Management</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹5 lakhs per annum</li><br>
+                <li><b>Mid-Level Landscape Architects (3-7 years of experience):</b> ₹6 to ₹12 lakhs per annum</li><br>
+                <li><b>Experienced Landscape Architects (8+ years of experience):</b> ₹12 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://cept.ac.in/" style="color:blue">CEPT University, Ahmedabad</a></li><br>
+                <li><a href="https://spa.ac.in/" style="color:blue">School of Planning and Architecture (SPA), New Delhi</a></li><br>
+                <li><a href="https://www.annauniv.edu/index.php" style="color:blue">Anna University, Chennai</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/architecture-planning/landscape-chp" class="button"><i>For more information...</i></a>           
+        </div>
+
+        
+
+
+
+        <div id="course4" class="course">
+            <h1>Graphic Design</h1>
+            <p>Graphic design is a dynamic fusion of creativity and technology, transforming ideas into visual masterpieces that communicate, inspire, and captivate. It's the art of crafting compelling visuals that tell stories, evoke emotions, and drive action. Through the clever use of color, typography, imagery, and layout, graphic designers create stunning graphics for everything from branding and advertising to digital media and print. They turn concepts into visually engaging realities, ensuring that each design not only stands out but also resonates deeply with its audience. In a world where visuals speak louder than words, graphic design is the vibrant language of innovation and expression.</p>
+            <img src="https://sunshinedesign.com.au/wp-content/uploads/2023/02/stufly_graphic_design_colourful_birds_exploding_out_powder_99bdc5ea-e29b-4c0a-986e-e9f557fdc032-1024x675.png" alt="Course 4" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Design (B.Des) in Graphic Design</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NID DAT</b> (National Institute of Design - Design Aptitude Test), <b>UCEED</b> (Undergraduate Common Entrance Examination for Design), or other institution-specific tests.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Bachelor of Fine Arts (BFA) in Graphic Design</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>Some institutions may conduct their own entrance exams or require a portfolio of work.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Graphic Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Advanced Diploma in Graphic Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Master of Design (M.Des) in Graphic Design</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Graphic Design, Design, Fine Arts, or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>CEED</b> (Common Entrance Examination for Design) or other institution-specific tests.</li>
+                        </ul>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Master of Fine Arts (MFA) in Graphic Design</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Graphic Design, Fine Arts, or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may conduct their own entrance exams or require a portfolio of work.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Ph.D. in Graphic Design</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Graphic Design or a related field.</li><br>
+                            <li>Minimum aggregate marks of 55% in the postgraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Graphic Design</li><br>
+                        <li>Advanced Certificate in Graphic Design</li><br>
+                        <li>Certificate in Digital Graphic Design</li><br>
+                        <li>Certificate in Visual Communication</li><br>
+                        <li>Certificate in Web and Graphic Design</li><br>
+                        <li>Certificate in Adobe Creative Suite (Photoshop, Illustrator, InDesign)</li><br>
+                        <li>Certificate in Multimedia and Graphic Design</li><br>
+                        <li>Certificate in Motion Graphics</li><br>
+                        <li>Certificate in UX/UI Design</li><br>
+                        <li>Certificate in Animation and Graphic Design</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2.5 to ₹4.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Graphic Designers (3-7 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+                <li><b>Experienced Graphic Designers (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.iiad.edu.in/" style="color:blue">Indian Institute of Art and Design (IIAD), New Delhi</a></li><br>
+                <li><a href="https://pearlacademy.com/" style="color:blue">Pearl Academy, West Delhi</a></li><br>
+                <li><a href="https://www.archedu.org/" style="color:blue">Arch College of Design and Business, Jaipur</a></li>
+            </ul>
+            <a href="https://design.careers360.com/colleges/list-of-graphic-designing-colleges-in-india" class="button"><i>For more information...</i></a>           
+        </div>
+
+        
+
+
+
+        <div id="course5" class="course">
+            <h1>Fashion Design</h1>
+            <p>Fashion design is the exhilarating realm where creativity meets craftsmanship, transforming fabric into wearable art that exudes style and individuality. It's the process of envisioning, sketching, and constructing garments that not only follow trends but also set them, pushing the boundaries of beauty and innovation. Fashion designers blend colors, textures, and patterns with impeccable skill to create pieces that speak to the heart and captivate the eye. From elegant couture to edgy streetwear, each design tells a unique story, reflecting cultural influences and personal expression. In the vibrant world of fashion design, every stitch and seam is a testament to the artistry and passion that define this ever-evolving industry.</p>
+            <img src="https://cdn.karishmacreations.com/00966050336.jpg" alt="Course 5" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Design (B.Des) in Fashion Design</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NIFT</b> Entrance Exam (National Institute of Fashion Technology), <b>NID DAT</b> (National Institute of Design - Design Aptitude Test), or <b>UCEED</b> (Undergraduate Common Entrance Examination for Design).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Bachelor of Fashion Design (B.FD)</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>Some institutions may conduct their own entrance exams or require a portfolio of work.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Bachelor of Arts (BA) in Fashion Design</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Fashion Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Advanced Diploma in Fashion Design</h4>
+                    <p><b>Duration:</b> 1-2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination from a recognized board.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li> 
+                <li>
+                    <h4>Master of Design (M.Des) in Fashion Design</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Fashion Design, Design, Fine Arts, or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NIFT, CEED</b> (Common Entrance Examination for Design), or other institution-specific tests.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Fashion Design (M.FD)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Fashion Design or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may conduct their own entrance exams or require a portfolio of work.</li>
+                        </ul>
+                    </p>
+                </li> 
+                <li>
+                    <h4>Master of Arts (MA) in Fashion Design</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Fashion Design, Fine Arts, or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% in the undergraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams or a portfolio.</li>
+                        </ul>
+                    </p>
+                </li> 
+                <li>
+                    <h4>Ph.D. in Fashion Design</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Fashion Design or a related field.</li><br>
+                            <li>Minimum aggregate marks of 55% in the postgraduate program (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>NET/JRF</b>.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Fashion Design</li><br>
+                        <li>Advanced Certificate in Fashion Design</li><br>
+                        <li>Certificate in Fashion Illustration</li><br>
+                        <li>Certificate in Fashion Merchandising</li><br>
+                        <li>Certificate in Apparel Production</li><br>
+                        <li>Certificate in Fashion Styling</li><br>
+                        <li>Certificate in Textile Design</li><br>
+                        <li>Certificate in Fashion Trend Analysis</li><br>
+                        <li>Certificate in Sustainable Fashion</li><br>
+                        <li>Certificate in Fashion Accessory Design</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2.5 to ₹4.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Fashion Designers (3-7 years of experience):</b> ₹5 to ₹12 lakhs per annum</li><br>
+                <li><b>Experienced Fashion Designers (8+ years of experience):</b> ₹12 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.pearlacademy.com/" style="color:blue">Pearl Academy, Jaipur</a></li><br>
+                <li><a href="http://www.diaindia.co.in/" style="color:blue">IMS Design And Innovation Academy - [DIA], Noida</a></li><br>
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University, Lucknow</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/design/fashion-design/ranking/top-fashion-design-colleges-in-india/94-2-0-0-0" class="button"><i>For more information...</i></a>           
+        </div>
+
+        
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+

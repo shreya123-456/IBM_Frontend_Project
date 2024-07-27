@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            background-image: url('https://img.freepik.com/free-photo/empty-road-dark-atmosphere_23-2150914325.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721347200&semt=ais_user');
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 35px;
+            margin: 0;
+        }
+
+        button {
+            font-size: 30px;
+            padding: 10px 20px;
+            border: none;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <h1>SUCCESS IS NOT A DESTINATION...<br>IT'S A JOURNEY!</h1><br><br><br>
+            <button onclick="redirectToPage()">Explore Now</button>
+        </div>
+    </div>
+    <script>
+        function redirectToPage() {
+            window.location.href = "http://127.0.0.1:5500/ibm.html";
+        }
+    </script>
+</body>
+</html>

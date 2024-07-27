@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Psychology</li>
+            <li onclick="showCourse('course2')">Sociology</li>
+            <li onclick="showCourse('course3')">Political Science</li>
+            <li onclick="showCourse('course4')">Economics</li>
+            <li onclick="showCourse('course5')">Anthropology</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Social Science</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://blogs.lse.ac.uk/impactofsocialsciences/files/2013/08/sbe.png">
+            <br><br><img src="https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2014/01/book-blog-fig-3-1024x743.jpg">
+        </div>
+        <div id="course1" class="course">
+            <h1>Psychology</h1>
+            <p>Psychology, the fascinating study of the mind and behavior, unravels the mysteries of human nature, offering profound insights into why we think, feel, and act the way we do. It bridges the gap between biology and society, exploring everything from neural mechanisms to social dynamics. Whether it's understanding the complexities of mental health, enhancing personal well-being, or optimizing organizational efficiency, psychology empowers us with the knowledge to improve lives and foster thriving communities. This dynamic and ever-evolving field invites curious minds to delve into the depths of human consciousness and contribute to a more empathetic, informed, and harmonious world.</p>
+            <img src="https://cdn-images-1.medium.com/v2/resize:fit:1600/1*gdsjrZPJIqFThAQlEIviEA.jpeg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Psychology</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of high school or equivalent (12 years of schooling).</li><br>
+                            <li>Some programs may require a background in science or a specific GPA.</li><br>
+                            <li>A qualifying score in entrance exams like <b>CUET</b><b>GAT</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Clinical Psychology</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Bachelor's degree in psychology or a related field.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>CUCET</b> score in Architecture and Planning.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Psychology</h4>
+                    <p><b>Duration:</b> Several months to 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Doctor in Psychology</h4>
+                    <p><b>Duration:</b> Varies (4-7 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Psychology or related field.</li><br>
+                            <li>Revelant work experience.</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>UGC NET/CSIR NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Counselling Skills</li><br>
+                        <li>Certificate in Counselling Psychology</li><br>
+                        <li>Certificate in Guidance and Counseling</li><br>
+                        <li>Certificate in Post graduate Diploma in Learning Disabilities</li><br>
+                        <li>Certificate in Consumer Psychology and Advertising</li><br>
+                        <li>Certificate in Advanced Forensic Psychology</li><br>
+                        <li>Certificate in The Psychology of Language</li><br>
+                        <li>Certificate in Psychology First Aid</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2.5 to ₹5.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (5-10 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+                <li><b>Experienced Professionals(9+ years of experience):</b> ₹10 to ₹21 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https:www.amity.edu/" style="color:blue">Amity University Noida</a></li><br>
+                <li><a href="https://christuniversity.in/" style="color:blue">Christ University, Calicut</a></li><br>
+                <li><a href="https://www.bhu.ac.in/" style="color:blue">Banars Hindu University</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/humanities-social-sciences/psychology/colleges/colleges-india#:~:text=BHU%2C%20Amity%20University%20Noida%2C%20DU%2C%20Christ%20University%20and%20Amity,top%20Psychology%20colleges%20in%20India." class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course2" class="course">
+            <h1>Sociology</h1>
+            <p>Sociology is a key discipline within the broader field of social sciences. It involves the study of society, social relationships, social interaction, and culture. Sociologists aim to understand the structure and dynamics of societies, the patterns of social behavior, and the ways in which these elements influence individuals and groups.</p>
+            <img src="https://www.servicescape.com/img/blog/post/body/post95646-2.webp" alt="Course 2" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Sociology</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>SAT</b>(Scholastic Assessment Test) or <b>JNUEE</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Social Reserch</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Sociology.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>ICAR</b> score in Social Science..</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Sociology</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D in Sociology</h4>
+                    <p><b>Duration:</b> Varies (3-6 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Sociology or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>UGC CSIR NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Classical Sociology Theory</li><br>
+                        <li>Certificate in Moralities of Everyday Life</li><br>
+                        <li>Certificate in Feminism and Social Justice</li><br>
+                        <li>Certificate in Social Norms,Social change</li><br>
+                        <li>Certificate in Model Thinking</li><br>
+                        <li>Certificate in Sports and Sociology Society</li><br>
+                        <li>Certificate in International Leadership and Organisational Behaviour</li><br>
+                        <li>Certificate in Collective and Comparative Sociology</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2 to ₹4 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (5-10years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (10+ years of experience):</b> ₹10 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.du.ac.in/" style="color:blue">Delhi University</a></li><br>
+                <li><a href="https://www.jnu.ac.in/" style="color:blue">Jawaharlal Nehru University</a></li><br>
+                <li><a href="https://www.unom.ac.in/" style="color:blue">University of Madras</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course3" class="course">
+            <h1>Political Science</h1>
+            <p>Political Science is the gateway to understanding the intricate workings of governments, policies, and the ever-evolving landscape of global politics. This dynamic field explores the art of governance, the impact of political decisions, and the complexities of power and justice. Whether you're passionate about shaping public policy, advocating for social justice, or analyzing international relations, Political Science offers a rich tapestry of knowledge and skills. Engage with critical thinking, debate, and research to uncover how societies are governed and how political change is orchestrated. Embark on a journey to become a catalyst for positive change in the world through the lens of Political Science.</p>
+            <img src="https://chanakyauniversity.edu.in/wp-content/uploads/2023/03/Political-Science.jpg" alt="Course 3" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Political Science</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>CUET</b>(Common University Entrance Test) or <b>PUBDET</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Public Administration(MPA)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Political Science.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>SAT</b> score in Political Science..</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Political Science</h4>
+                    <p><b>Duration:</b> 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D in Political Science </h4>
+                    <p><b>Duration:</b> Varies (3-6 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Political Science or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>CRET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Introduction to Political Science</li><br>
+                        <li>Certificate in Political Regimes and Conflict</li><br>
+                        <li>Certificate in Political Ideologies</li><br>
+                        <li>Certificate in Indian Government and Politics</li><br>
+                        <li>Certificate in Women Power and Politics</li><br>
+                        <li>Certificate in Globalization and Culture</li><br>
+                        <li>Certificate in International Politics in the Korean Peninsula</li><br>
+                        <li>Certificate in The Science and Politics of the GMO</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹6.5 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (5-10years of experience):</b> ₹5 to ₹18 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (10+ years of experience):</b> ₹8 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://lsr.edu.in/" style="color:blue">Lady Shri Ram College For Women</a></li><br>
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University noida</a></li><br>
+                <li><a href="https://www.unom.ac.in/" style="color:blue">Hindu College,New Delhi</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course4" class="course">
+            <h1>Economics</h1>
+            <p>Economics is a fundamental branch of social science that focuses on the study of how individuals, businesses, governments, and societies make choices regarding the allocation of scarce resources. Economics is the dynamic and fascinating study of how societies allocate resources, make decisions, and create wealth. It delves into the intricate balance of supply and demand, the impact of policies on global markets, and the forces that drive economic growth and stability. From understanding the complexities of inflation and unemployment to exploring the intricacies of international trade and finance, economics equips you with the analytical tools to navigate and influence the financial world. Embark on a journey through this vital field and uncover the strategies that shape our world's economies, making you a catalyst for change and innovation.</p>
+            <img src="https://www.igdleaders.org/wp-content/uploads/2020/08/Indian-Economic-Growth.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Economics</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination.</li><br>
+                            <li>Some programs may require specific subjects like mathematics or economics at the high school level.</li><br>
+                            <li>A qualifying score in entrance exams like <b>DUET</b>(Delhi University Entrance Test) or <b>UGC NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Applied Economics</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Economics or related field.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>JNU CEEB</b> Score in Economics.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Economics</h4>
+                    <p><b>Duration:</b>(1-2) years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Economics</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Economics or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>UGC NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Health Economics and Policy</li><br>
+                        <li>Certificate in Real Estate Economics and Finance</li><br>
+                        <li>Certificate in Economics for Capital Markets</li><br>
+                        <li>Certificate in MSc in Health Economics and Policy</li><br>
+                        <li>Certificate in Master of Economics in Home Economics and Policy</li><br>
+                        <li>Certificate in Master of Science in Applied Economics</li><br>
+                        <li>Certificate in Market Force of Demand and Supply</li><br>
+                        <li>Certificate in The Politics of Economics</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3.5 to ₹8 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (5-10 years of experience):</b> ₹6 to ₹15 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (10+ years of experience):</b> ₹10 to ₹25 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.jnu.ac.in/" style="color:blue">Jawaharlal Nehru University</a></li><br>
+                <li><a href="https://www.isical.ac.in/" style="color:blue">Indian Statistical Institute(ISI)</a></li><br>
+                <li><a href="https://www.iimb.ac.in/" style="color:blue">Indian Institute of Management, Bangalore</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+        <div id="course5" class="course">
+            <h1>Anthropology</h1>
+            <p>Anthropology, the fascinating study of humanity, delves into the rich tapestry of human culture, evolution, and societal development. This dynamic field explores the intricacies of our origins, behaviors, and interactions, offering a comprehensive understanding of what it means to be human. From unraveling ancient mysteries through archaeology to examining contemporary social issues, anthropology bridges the past and present, providing profound insights into our collective future. Embark on a journey through time and cultures, and uncover the diverse and interconnected stories that define our world.</p>
+            <img src="https://blog.antropologia2-0.com/wp-content/uploads/2018/04/business-anthro-1.png" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Arts in Anthropology</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Social Science and Biology subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>DUET</b>(Delhi University Entrance Test) or <b>SAT</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Forensic Anthropology</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Anthropology.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>JNU</b> score in Anthropology.</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Anthropology</h4>
+                    <p><b>Duration:</b> 1 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Anthropology</h4>
+                    <p><b>Duration:</b> Varies (3-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Anthropology or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>UGC NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Magic in the Middle Ages</li><br>
+                        <li>Certificate in Introduction to Archaeology</li><br>
+                        <li>Certificate in Anthropology of Current World Issues</li><br>
+                        <li>Certificate in Understanding Societies and Cultures</li><br>
+                        <li>Certificate in Exploring Focus Groups in Anthropology Research</li><br>
+                        <li>Certificate in The Anthropology of Social Media</li><br>
+                        <li>Certificate in Bipedalism:The Science of upright Walking</li><br>
+                        <li>Certificate in Relativism</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹2.5 to ₹6 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (4-10 years of experience):</b> ₹4.5 to ₹12 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (10+ years of experience):</b> ₹8 to ₹20 lakhs per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.amity.edu/" style="color:blue">Amity University</a></li><br>
+                <li><a href="https://www.caluniv.ac.in/" style="color:blue">Calcutta University</a></li><br>
+                <li><a href="https://www.gndu.ac.in/" style="color:blue">Guru Nank Dev University</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        </div>
+
+         <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

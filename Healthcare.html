@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+        .slideshow {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slideshow img {
+            width: 100%;
+            display: block;
+        }
+
+        .slideshow .prev, .slideshow .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .slideshow .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .slideshow .prev:hover, .slideshow .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+<li onclick="showCourse('publicHealth')">Public Health</li>
+            <li onclick="showCourse('healthInformatics')">Health Informatics</li>
+            <li onclick="showCourse('telehealth')">Telehealth</li>
+            <li onclick="showCourse('geneticCounseling')">Genetic Counseling</li>
+            <li onclick="showCourse('nursing')">Nursing</li>
+            
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Medical Domains</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <div class="slideshow">
+                <div class="slides">
+                    <div class="slide">
+                        <img src="https://emi.parkview.com//media/BlogImages/Dashboard_600_DoctorsDay_03_19.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="https://www.shutterstock.com/image-photo/smile-portrait-hospital-doctors-people-600nw-2338427911.jpg">
+                    </div>
+                    <div class="slide">
+                        <img src="https://as1.ftcdn.net/v2/jpg/05/18/97/60/1000_F_518976013_pqUKkHTvdUiliw1zxTRlvE2L5yFuyfNv.jpg">
+                    </div>
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">❮</a>
+                <a class="next" onclick="changeSlide(1)">❯</a>
+            </div>
+        </div>
+        <div id="publicHealth" class="course">
+            <h1>Public Health</h1>
+            <p>Public Health is the science and art of preventing disease, prolonging life, and promoting health through organized efforts and informed choices of society, organizations, public and private, communities, and individuals.</p>
+            <img src="https://media.post.rvohealth.io/wp-content/uploads/2017/05/getting-physical-examination_thumb-732x549.jpg" class="course-image">
+            <h2>Courses</h2>
+            <ol>
+                <li>
+                    <h4>Bachelor of Public Health (BPH)</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Biology as a compulsory subject.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Public Health (MPH)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in any health-related field.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Ph.D. in Public Health</h4>
+                    <p><b>Duration:</b> 3-5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Public Health or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+            </ol>
+<h2>Current Trends</h2>
+                        <ul>
+                            <li>Emphasis on epidemiology and biostatistics</li><br>
+                            <li>Focus on health policy and management</li><br>
+                            <li>Increasing importance of global health initiatives</li>
+                        </ul>
+
+
+            <h2>Expected Salary</h2>
+            <ul>
+                <li>Freshers: ₹3-5 lakhs per annum</li><br>
+                <li>Experienced: ₹8-15 lakhs per annum</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul>
+                <li><a href="https://www.aiims.edu/en.html" style="color:blue">AIIMS, New Delhi</a></li><br>
+                <li><a href="https://www.tiss.edu/" style="color:blue">Tata Institute of Social Sciences, Mumbai</a></li><br>
+                <li><a href="https://phfi.org/" style="color:blue">Public Health Foundation of India</a></li>
+            </ul>
+        </div>
+        <div id="healthInformatics" class="course">
+            <h1>Health Informatics</h1>
+            <p>Health Informatics is a field that combines health care, information technology, and business administration to improve the quality and efficiency of health care delivery through data management and analytics.</p>
+            <img src="https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/75585/images/HealthInformaticsFirefly.jpg" class="course-image">
+            <h2>Courses</h2>
+            <ol>
+                <li>
+                    <h4>Bachelor of Science in Health Informatics</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination with Biology, Physics, and Chemistry.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Health Informatics</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Health Informatics or related field.</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Ph.D. in Health Informatics</h4>
+                    <p><b>Duration:</b> 3-5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Health Informatics or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+            </ol>
+<h2>Expected Salary</h2>
+            <ul> 
+<li><b>Freshers (0-2 years of experience):</b> ₹5 to ₹8 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹9 to ₹18 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (8+ years of experience):</b> ₹18 to ₹35 lakhs per annum or higher</li>
+
+                            </ul>
+             <h2>Top Institutes</h2>
+            <ul>
+                <li><a href="https://www.snu.edu.in/" style="color:blue">Shiv Nadar University</a></li><br>
+                <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology Madras</a></li><br>
+                <li><a href="https://www.jnu.ac.in/" style="color:blue">Jawaharlal Nehru University</a></li>
+            </ul>
+        </div>
+        <div id="telehealth" class="course">
+            <h1>Telehealth</h1>
+            <p>Telehealth is the use of telecommunications technology to provide healthcare services remotely. It includes telemedicine, teletherapy, and remote patient monitoring, enhancing access to healthcare.</p>
+            <img src="https://st4.depositphotos.com/1000975/21893/i/450/depositphotos_218931032-stock-photo-telehealth-concept-with-doctor-doing.jpg" class="course-image">
+   <h2>Courses</h2>
+            <ol>
+                <li>
+                    <h4>Certificate in Telehealth</h4>
+                    <p><b>Duration:</b> 6 months<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Open to healthcare professionals and students.</li><br>
+                            <li>Completion of relevant basic healthcare or IT courses may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Diploma in Telehealth</h4>
+                    <p><b>Duration:</b> 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in healthcare or IT field.</li><br>
+                            <li>Experience in healthcare preferred.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Telehealth</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Healthcare, IT, or related field.</li><br>
+                            <li>Relevant work experience may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+            </ol>
+<h2>Current Trends</h2>
+                        <ul>
+                            <li>Big data analytics in healthcare</li><br>
+                            <li>Telehealth and mobile health technologies</li><br>
+                            <li>Artificial intelligence and machine learning applications</li>
+                        </ul>
+<h2>Expected Salary</h2>
+            <ul> 
+<li><b>Freshers (0-2 years of experience):</b> ₹5 to ₹8 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹9 to ₹18 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (8+ years of experience):</b> ₹18 to ₹35 lakhs per annum or higher</li>
+
+                            </ul>
+            <h2>Top Institutes</h2>
+            <ul>
+<li><a href="https://www.aiims.edu/en.html" style="color:blue" target="_blank">AIIMS, Delhi</a></li><br>
+                <li><a href="https://www.sctimst.ac.in/" style="color:blue" target="_blank">Sree Chitra Tirunal Institute for Medical Sciences and Technology</a></li><br>
+                <li><a href="https://www.jipmer.edu.in/" style="color:blue" target="_blank">JIPMER, Puducherry</a></li>
+
+
+            </ul>
+        </div>
+        <div id="geneticCounseling" class="course">
+            <h1>Genetic Counseling</h1>
+            <p>Genetic Counseling involves evaluating family histories to assess the risk of inherited conditions, providing information about genetic disorders, and supporting families in making informed decisions.</p>
+            <img src="https://youthincmag.com/wp-content/uploads/2016/04/Dollarphotoclub_84711046-e1464778671643.jpg" class="course-image">
+            <h2>Courses</h2>
+            <ol>
+                <li>
+                    <h4>Master of Science in Genetic Counseling</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Genetics, Biology, or related field.</li><br>
+                            <li>Relevant experience in a healthcare setting may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Ph.D. in Genetic Counseling</h4>
+                    <p><b>Duration:</b> 3-5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Genetic Counseling or related field.</li><br>
+                            <li>Relevant research experience may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+            </ol>
+<h2>Current Trends</h2>
+                        <ul>
+                            <li>Advances in genomic technology</li><br>
+                            <li>Personalized medicine</li><br>
+                            <li>Increased public awareness of genetic counseling</li>
+                        </ul>
+            <h2>Expected Salary</h2>
+            <ul><li><b>Freshers (0-2 years of experience):</b> ₹4 to ₹6 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹7 to ₹14 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (8+ years of experience):</b> ₹15 to ₹28 lakhs per annum or higher</li>
+
+                            </ul>
+            <h2>Top Institutes</h2>
+            <ul>
+                <li><a href="https://www.aiims.edu/en.html" style="color:blue" target="_blank">AIIMS, Delhi</a></li><br>
+                <li><a href="https://www.sctimst.ac.in/" style="color:blue" target="_blank">Sree Chitra Tirunal Institute for Medical Sciences and Technology</a></li><br>
+                <li><a href="https://www.manipal.edu/mu.html" style="color:blue" target="_blank">Manipal Academy of Higher Education</a></li>
+            
+
+            </ul>
+        </div>
+
+
+                                <div id="nursing" class="course">
+            <h1>Nursing</h1>
+            <p>Nursing is a healthcare profession focused on the care of individuals, families, and communities to attain, maintain, or recover optimal health and quality of life. It includes various levels of education and specialization.</p>
+            <img src="https://www.shutterstock.com/image-photo/female-nurse-injecting-needle-hand-260nw-2194671131.jpg" class="course-image">
+            <h2>Courses</h2>
+            <ol>
+                <li>
+                    <h4>Basic Nursing Certificate</h4>
+                    <p><b>Duration:</b> 1 year<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of high school education.</li><br>
+                            <li>Completion of relevant health and biology courses.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Bachelor of Science in Nursing (BSN)</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of high school education with a focus on science subjects.</li><br>
+                            <li>Minimum aggregate marks of 50% in high school (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Science in Nursing (MSN)</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Nursing.</li><br>
+                            <li>Relevant work experience in healthcare may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Doctor of Nursing Practice (DNP)</h4>
+                    <p><b>Duration:</b> 3-4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Nursing.</li><br>
+                            <li>Relevant clinical experience and research may be required.</li>
+                        </ul>
+                    </p>
+                </li>
+            </ol>
+           <h2>Expected Salary</h2>
+            <ul>
+<li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹5 lakhs per annum</li><br>
+                <li><b>Mid-Level Professionals (3-7 years of experience):</b> ₹5.5 to ₹10 lakhs per annum</li><br>
+                <li><b>Experienced Professionals (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+
+                     </ul>
+            <h2>Top Institutes</h2>
+            <ul>
+                <li><a href="https://www.aiims.edu/en.html" style="color:blue" target="_blank">AIIMS, Delhi</a></li><br>
+                <li><a href="https://www.cmc-vellore.edu/" style="color:blue" target="_blank">CMC, Vellore</a></li><br>
+                <li><a href="https://www.jipmer.edu.in/" style="color:blue" target="_blank">JIPMER, Puducherry</a></li>
+
+            </ul>
+         </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showCourse(courseId) {
+            const courses = document.querySelectorAll('.course');
+            courses.forEach(course => {
+                if (course.id === courseId) {
+                    course.classList.add('active');
+                } else {
+                    course.classList.remove('active');
+                }
+            });
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('content').classList.add('active');
+const menu=document.getElementById('menu');
+if(menu.classList.contains('show')){
+toggleMenu();
+        }
+}
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+if(menu.classList.contains('show')){
+content.classList.add('with-menu');
+}
+else{
+content.classList.remove('with-menu');
+
+          
+        }
+}
+
+        function changeSlide(n) {
+            const slides = document.querySelector('.slides');
+            const slideCount = document.querySelectorAll('.slide').length;
+            slideIndex = (slideIndex + n + slideCount) % slideCount;
+            slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function autoChangeSlide() {
+            changeSlide(1);
+            setTimeout(autoChangeSlide, 3000);
+        }
+
+        autoChangeSlide();
+    </script>
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+<button class="menu-btn"onclick="toggleMenu()">☰</button>
+<div class="menu"id="menu">
+<ul>
+<li onclick="showCourse('course1')">History</li>
+<li onclick="showCourse('course2')">Philosophy</li>
+<li onclick="showCourse('course3')">Linguistics </li>
+<li onclick="showCourse('course4')">Literature </li>
+<li onclick="showCourse('course5')">Religious Studies </li>
+</ul>
+</div>
+<div class="content"id="content">
+<div id="welcome">
+<h1><i>Explore the World of Humanities</i></h1>
+<p style="font-size:18px"><i>Select a course from the menu to see the details.</i></p>
+<img src="https://www.researchgate.net/publication/304417442/figure/fig1/AS:669993058451472@1536750201418/A-bar-graph-showing-the-enrolment-levels-between-Humanities-and-the-Sciences-for.ppm ">
+<br><br><imgsrc="https://helpingwithmath.com/wp-content/uploads/2022/07/image-175.png ">
+</div>
+<div id="course1"class="course">
+<h1>History </h1>
+<p>History is the systematic study and documentation of the human past. The period of events before the invention of writing systems is considered prehistory. "History" is an umbrella term comprising past events as well as the memory, discovery, collection, organization, presentation, and interpretation of these events. It is the branch of knowledge dealing with past events. a continuous, systematic narrative of past events as relating to a particular people, country, period, person</p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKyQLk2MtbGJNwxf9PORQjkUxeGyYBfDb1Bg&s "alt="Course1"class="course-image">
+<h2>Courses</h2>
+<ol style="text-align:left;">
+    <li>
+        <h4>Bachelor of Arts in History (B.A History)</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like <b>JUET</b>or <b>CUET</b>.</li>
+            </ul>
+        </p>
+    </li>
+    <li>
+        <h4>Master of Arts in Historical Studies (M.A History)</h4>
+        <p><b>Duration:</b> 2 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A recognized Bachelor’s degree in Arts in History (B.A History).</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Some institutions may require a valid <b>JUET</b> score in History.</li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Diploma in Archival Studies </h4>
+        <p><b>Duration:</b> 1 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Master Degree in any stream with 50% marks.</li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Ph.D. in History</h4>
+        <p><b>Duration:</b> Varies (3-6 years)<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A Master’s degree in Historical Studies (M.A) or related field.</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Some institutions may require a qualifying score in entrance exams like <b>UGC-NET</b>.</li>
+            </ul>
+        </p>
+    </li>     
+    <li>
+        <h4>Integrated B.A + M.A</h4>
+        <p><b>Duration:</b> 5 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like <b>JUET</b> or <b>CUET</b>.</li>
+            </ul>
+        </p>
+    </li>  
+    <li>
+        <h4>Certifications(6 months-1 year)</h4>
+        <ul style="font-style:italic">
+            <li>The Modern World, Part One: Global History from 1760 to 1910 </li><br>
+            <li>The Modern World, Part Two: Global History since 1910 </li><br>
+            <li>History Courses </li><br>
+            <li>Ancient History Courses </li><br>
+            <li>Medieval History Course </li><br>
+            <li>Ancient Indian History, Culture and Archaeology </li><br>                      
+        </ul>
+    </li>       
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align:left">
+    <li><b>Freshers (0-2 years of experience):</b> ₹3.6 to ₹6 lakhs per annum</li><br>
+    <li><b>Mid-Level Historians (3-7 years of experience):</b> ₹7.2 to ₹14.4 lakhs per annum</li><br>
+    <li><b>Experienced Historians (8+ years of experience):</b> ₹14.4 to ₹30 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+<ul style="text-align:left"class="links">
+    <li><a href="https://www.bhu.ac.in/"style="color:blue">Banaras Hindu University, Uttar Pradesh</a></li><br>
+    <li><a href="https://christuniversity.in/"style="color:blue">Christ University, Bangalore </a></li><br>
+    <li><a href="https://www.du.ac.in/"style="color:blue">University of Delhi, Delhi </a></li>
+</ul>
+<a href="https://www.shiksha.com/humanities-social-sciences/history/colleges/colleges-india"class="button"><i>For more information...</i></a>
+
+</div>
+<div id="course2"class="course">
+<h1>Philosophy </h1>
+<p> philosophy is an activity people undertake when they seek to understand fundamental truths about themselves, the world in which they live, and their relationships to the world and to each other. As an academic discipline philosophy is much the same. Those who study philosophy are perpetually engaged in asking, answering, and arguing for their answers to life's most basic questions. To make such a pursuit more systematic academic philosophy is traditionally divided into major areas of study.</p>
+<img src="https://cssh.northeastern.edu/philosophy/wp-content/uploads/sites/11/2020/03/philosophy.jpg "alt="Course2" class="course-image">
+<h2>Courses</h2>
+<ol style="text-align:left;">
+    <li>
+        <h4>Bachelor of Arts in Philosophy (B.A Philosophy)</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like <b>CUET</b>.</li>
+            </ul>
+        </p>
+    </li>
+    <li>
+        <h4>Master of Arts in Ethics and Applied Philosophy (MAPE)</h4>
+        <p><b>Duration:</b> 2 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A recognized Bachelor’s degree in Arts in Philosophy (B.A Philosophy).</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Some institutions may require a valid <b>CUET</b> score in History.</li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Diploma in Logic and Critical Thinking</h4>
+        <p><b>Duration:</b>  5 months at 4 hours a week<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Master Degree in any stream with 50% marks.</li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Ph.D. in Philosophy</h4>
+        <p><b>Duration:</b> Varies (3-8 years)<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A Master’s degree in Historical Studies (M.A) or related field.</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Bachelor's degree Master's degree (varied by country and institution) <b>UGC-NET</b>.</li>
+            </ul>
+        </p>
+    </li>     
+    <li>
+        <h4>Integrated B.A + M.A</h4>
+        <p><b>Duration:</b> 5 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like or <b>CUET</b>.</li>
+            </ul>
+        </p>
+    </li>  
+    <li>
+        <h4>Certifications(6 months-1 year)</h4>
+        <ul style="font-style:italic">
+            <li>Introduction to Philosophy   </li><br>
+            <li>Introduction to Logic and Critical Thinking Specialization </li><br>
+            <li>The Philosophy of Emotion</li><br>
+            <li>Justice for Future Generations: Environment, Population, and Climate </li><br>
+            <li>Philosophy and Critical Thinking </li><br>
+            <li>Religion, Conflict, and Peace </li><br>                      
+        </ul>
+    </li>       
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align:left">
+    <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹6 lakhs per annum</li><br>
+    <li><b>Mid-Level Philosopher (3-7 years of experience):</b> ₹6 to ₹12 lakhs per annum</li><br>
+    <li><b>Experienced Philosopher (8+ years of experience):</b> ₹12 to ₹25 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+<ul style="text-align:left"class="links">
+    <li><a href="https://www.bhu.ac.in/"style="color:blue">Banaras Hindu University, Uttar Pradesh</a></li><br>
+    <li><a href="https://christuniversity.in/"style="color:blue">Christ University, Bangalore </a></li><br>
+    <li><a href="https://www.du.ac.in/"style="color:blue">University of Delhi, Delhi </a></li>
+</ul>
+<a href="https://www.shiksha.com/humanities-social-sciences/philosophy/colleges/colleges-india"class="button"><i>For more information...</i></a>
+
+</div>
+<div id="course3"class="course">
+<h1>Linguistics</h1>
+<p> the scientific study of language and its structure, including the study of grammar, syntax, and phonetics. Specific branches of linguistics include sociolinguistics, dialectology, psycholinguistics, computational linguistics, comparative linguistics, and structural linguistics.Its focus is the systematic investigation of the properties of particular languages as well as the characteristics of language in general.</p>
+<img src="https://drexel.edu/~/media/Images/coas2/news/2021/linguistics-1200.ashx "alt="Course3"class="course-image">
+<h2>Courses</h2>
+<ol style="text-align:left;">
+    <li>
+        <h4>Bachelor of Arts in Linguistics (B.A Linguistics)</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 40% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like <b>CUET</b>.</li>
+            </ul>
+        </p>
+    </li>
+    <li>
+        <h4>Master of Science in Computational Linguistics (M.Sc)</h4>
+        <p><b>Duration:</b> 2 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A recognized Bachelor’s degree in Arts in Philosophy (B.A Philosophy).</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Diploma in Logic and Critical Thinking</h4>
+        <p><b>Duration:</b> 8 Weeks<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Master Degree in Linguistics with 50% marks.</li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Ph.D. in Philosophy</h4>
+        <p><b>Duration:</b> Varies (3-4 years)<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A Master’s degree in Linguistics (M.Sc) or related field.</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Bachelor's degree Master's degree (varied by country and institution) <b>UGC-NET</b>.</li>
+            </ul>
+        </p>
+    </li>     
+    <li>
+        <h4>Certifications(6 months-1 year)</h4>
+        <ul style="font-style:italic">
+            <li>Certificate in Applied Linguistics   </li><br>
+            <li>Certificate in Language Teaching </li><br>
+            <li>Certificate in Sociolinguistics</li><br>
+            <li>Certificate in Translation Studies </li><br>
+            <li>Certificate in Phonetics and Phonology </li><br>
+            <li>Certificate in Computational Linguistics </li><br>                      
+        </ul>
+    </li>       
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align:left">
+    <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹5 lakhs per annum</li><br>
+    <li><b>Mid-Level Linguist (3-7 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+    <li><b>Experienced Linguist (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+<ul style="text-align:left"class="links">
+    <li><a href="https://www.bhu.ac.in/"style="color:blue">Banaras Hindu University, Uttar Pradesh</a></li><br>
+    <li><a href="https://christuniversity.in/"style="color:blue">Christ University, Bangalore </a></li><br>
+    <li><a href="https://www.du.ac.in/"style="color:blue">University of Delhi, Delhi </a></li>
+</ul>
+<a href="https://www.shiksha.com/humanities-social-sciences/linguistics/colleges/colleges-india"class="button"><i>For more information...</i></a>
+
+</div>
+<div id="course4"class="course">
+<h1>Literature</h1>
+<p>literature is a body of written works. The name has traditionally been applied to those imaginative works of poetry and prose distinguished by the intentions of their authors and the perceived aesthetic excellence of their execution. It is a method of recording, preserving, and transmitting knowledge and entertainment. It can also have a social, psychological, spiritual, or political role. </p>
+<img src="https://www.shutterstock.com/image-photo/old-books-on-wooden-shelf-260nw-1561137233.jpg "alt="Course4"class="course-image">
+<h2>Courses</h2>
+<ol style="text-align:left;">
+    <li>
+        <h4>Bachelor of Arts in English Literature (B.A Literature)</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 40% in 10+2 (may vary by institution).</li><br>
+                <li>A qualifying score in entrance exams like <b>CUET</b> if required.</li>
+            </ul>
+        </p>
+    </li>
+    <li>
+        <h4>Master of Fine Arts in Creative Writing</h4>
+        <p><b>Duration:</b> 2 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A recognized Bachelor’s degree in Arts in Philosophy (B.A Philosophy).</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Diploma in Comparative Literature</h4>
+        <p><b>Duration:</b> The diploma can be completed in two semesters by full-time students, but the Program can accommodate part-time students.<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Candidates who have completed their 12th schooling or equivalent studies </li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Ph.D. in Literature</h4>
+        <p><b>Duration:</b> Varies (3-5 years)<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A Master’s degree in Linguistics (M.Sc) or related field.</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Bachelor's degree Master's degree (varied by country and institution) <b>UGC-NET</b>.</li>
+            </ul>
+        </p>
+    </li>     
+    <li>
+        <h4>Certifications(6 months-1 year)</h4>
+        <ul style="font-style:italic">
+            <li>Certificate in Creative Writing  </li><br>
+            <li>Certificate in Literary Theory </li><br>
+            <li>Certificate in Comparative Literature</li><br>
+            <li>Certificate in Editing and Proofreading </li><br>
+            <li>Certificate in Publishing </li><br>
+            <li>Certificate in Gender Studies </li><br>                      
+        </ul>
+    </li>       
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align:left">
+    <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹5 lakhs per annum</li><br>
+    <li><b>Mid-Level Literate (3-7 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+    <li><b>Experienced Literate (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+<ul style="text-align:left"class="links">
+    <li><a href="https://uohyd.ac.in/"style="color:blue">University of Hyderabad, Telangana</a></li><br>
+    <li><a href="https://www.caluniv.ac.in/"style="color:blue">University of Calcutta,Kolkata</a></li><br>
+    <li><a href="https://www.du.ac.in/"style="color:blue">University of Delhi, Delhi </a></li>
+</ul>
+<a href="https://www.shiksha.com/humanities-social-sciences/literature/colleges/colleges-india"class="button"><i>For more information...</i></a>
+
+</div>
+<div id="course5"class="course">
+<h1>Religious Studies </h1>
+<p>Religious Studies is an academic field that explores religions, their practices, beliefs, texts, and historical contexts. It involves the study of various religious traditions, including their doctrines, rituals, ethical systems, and social impact. Scholars in this field examine both historical and contemporary aspects of religion, aiming to understand the role and influence of religion in human societies.  </p>
+<img src="https://www.riversprimary.org.uk/assets/hero-images/religious-education-at-rivers-primary-academy__FocusFillWzE0NDAsNTYwLGZhbHNlLDBd.jpg "alt="Course5"class="course-image">
+<h2>Courses</h2>
+<ol style="text-align:left;">
+    <li>
+        <h4>Bachelor of Arts in Religious Studies</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Completion of 10+2 or equivalent examination with Mathematics as a compulsory subject.</li><br>
+                <li>Minimum aggregate marks of 45% in 10+2 (may vary by institution).</li>
+            </ul>
+        </p>
+    </li>
+    <li>
+        <h4>Master of Divinity (M.Div)</h4>
+        <p><b>Duration:</b> 3 to 4 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A recognized Bachelor’s degree in Arts in Philosophy (B.A Philosophy).</li><br>
+                <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Diploma in Interfaith Dialouge</h4>
+        <p><b>Duration:</b> The diploma can be completed in 4 weeks at 3 hours per week<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>Candidates who have completed their Bachelor’s degree </li>
+            </ul>
+        </p>
+    </li>    
+    <li>
+        <h4>Ph.D. in Religious Studies</h4>
+        <p><b>Duration:</b> 3 years<br><br>
+            <b>Eligibility:</b><br>
+            <ul>
+                <li>A Master’s degree in any stream of Religious Studies(M.Sc) or related field.</li><br>
+                <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                <li>Bachelor's degree Master's degree (varied by country and institution) <b>UGC-NET</b>.</li>
+            </ul>
+        </p>
+    </li>     
+    <li>
+        <h4>Certifications(6 months-1 year)</h4>
+        <ul style="font-style:italic">
+            <li>Certificate in Comparative Religion  </li><br>
+            <li>Certificate in Biblical Studies </li><br>
+            <li>Certificate in Islamic Studies</li><br>
+            <li>Certificate in Hindu Studies </li><br>
+            <li>Certificate in Buddhist Studies </li><br>
+            <li>Certificate in Religion and Ethics </li><br>                      
+        </ul>
+    </li>       
+</ol>
+<h2>Salary Expectations</h2>
+<ul style="text-align:left">
+    <li><b>Freshers (0-2 years of experience):</b> ₹3 to ₹5 lakhs per annum</li><br>
+    <li><b>Mid-Level Theologists (3-7 years of experience):</b> ₹5 to ₹10 lakhs per annum</li><br>
+    <li><b>Experienced Theologists (8+ years of experience):</b> ₹10 to ₹20 lakhs per annum or higher</li>
+</ul>
+<h2>Top Institutes</h2>
+<ulstyle="text-align:left"class="links">
+    <li><a href="https://studentsregistration.nagpuruniversity.ac.in/PostG/UG_PG_MID"style="color:blue">Rashtrasant TukadojiMaharaj Nagpur University, Maharashtra</a></li><br>
+    <li><a href="https://www.amu.ac.in/"style="color:blue">Aligarh Muslim University, Uttar Pradesh </a></li><br>
+    <li><a href="https://gurukashiuniversity.in/"style="color:blue">Guru Kashi University, Punjab </a></li><br>
+</ul>
+<a href="https://www.shiksha.com/humanities-social-sciences/religious-studies/colleges/colleges-india"class="button"><i>For more information...</i></a>
+</div>
+</div>
+<script>
+function toggleMenu() {
+constmenu = document.getElementById('menu');
+constcontent = document.getElementById('content');
+menu.classList.toggle('show');
+if (menu.classList.contains('show')) {
+    content.classList.add('with-menu');
+} else {
+    content.classList.remove('with-menu');
+}
+}
+
+function showCourse(courseId) {
+document.querySelectorAll('.course').forEach(course=> {
+    course.classList.remove('active');
+});
+document.getElementById(courseId).classList.add('active');
+document.getElementById('welcome').style.display = 'none';
+constmenu = document.getElementById('menu');
+if (menu.classList.contains('show')) {
+    toggleMenu();
+}
+}
+
+ document.querySelectorAll('.course').forEach(course=> {
+course.classList.remove('active');
+});
+</script>
+</body>
+</html>
+

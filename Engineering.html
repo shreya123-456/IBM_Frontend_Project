@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #f0f0f1;
+        }
+
+        .menu {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            font-size: 20px;
+            top: 60px; 
+            bottom: 0;
+            left: -250px; 
+            transition: left 0.5s;
+            overflow-y: auto;
+            z-index: 5;
+        }
+
+        .menu.show {
+            left: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            background-color: #575757;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 0;
+            margin-left: 0;
+            transition: margin-left 0.5s;
+            overflow-y: auto;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        .content.with-menu {
+            margin-left: 300px;
+            text-align: center;
+        }
+        
+        .menu-btn {
+            background-color:white;
+            color: #333;      
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+        }
+
+        .course {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: whitesmoke;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .course.active {
+            display: block;
+        }
+
+        .course-image {
+            width: 80%;
+            height: auto;
+            max-width: 80%;
+            border-radius: 20px;
+        }
+
+        .button {
+            font-size: 15px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .button:hover {
+           background-color: white;
+           color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu" id="menu">
+        <ul>
+            <li onclick="showCourse('course1')">Civil Engineering</li>
+            <li onclick="showCourse('course2')">Mechanical Engineering</li>
+            <li onclick="showCourse('course3')">Electrical Engineering</li>
+            <li onclick="showCourse('course4')">Chemical Engineering</li>
+            <li onclick="showCourse('course5')">Aerospace Engineering</li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <div id="welcome">
+            <h1><i>Explore the World of Engineering</i></h1>
+            <p style="font-size: 18px"><i>Select a course from the menu to see the details.</i></p>
+            <img src="https://dailytechnic.com/wp-content/uploads/2021/07/Top-New-Technology-Trends.jpg">
+            <br><br><img src="https://www.researchgate.net/profile/Fawaz-M-Abdullah/publication/325425301/figure/fig1/AS:631630469296182@1527603847820/ndustrial-Engineers-working-areas_Q640.jpg">
+        </div>
+        <div id="course1" class="course">
+            <h1>Civil Engineering</h1>
+            <p> Civil engineering is a professional discipline that deals with the design, construction, and maintenance of the built environment. This includes infrastructure such as roads, bridges, dams, airports, sewage systems, and buildings. Civil engineers work to ensure these structures are safe, sustainable, and efficient, addressing challenges related to materials, geography, environmental impact, and urban planning. Their work often involves collaboration with other engineers, architects, and urban planners. With a focus on both functionality and aesthetics, civil engineering plays a crucial role in the development and enhancement of communities and their infrastructure.</p>
+            <img src="https://www.unisofturkey.com/wp-content/uploads/2021/07/Civil-engineers-700x525.jpg" alt="Course 1" class="course-image">
+            <h2>Courses</h2>
+            <ol style="text-align: left;">
+                <li>
+                    <h4>Bachelor of Civil Engineering</h4>
+                    <p><b>Duration:</b> 4 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or diplomo.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>Comed-K</b> or <b>JEE</b>.</li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <h4>Master of Civil Engineering</h4>
+                    <p><b>Duration:</b> 2 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A recognized Bachelor’s degree in Civil Engineering</li><br>
+                            <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                            <li>Some institutions may require a valid <b>GATE</b>  or <b>GMAT</b></li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Diploma in Civil Engineering</h4>
+                    <p><b>Duration:</b> 3 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                        </ul>
+                    </p>
+                </li>    
+                <li>
+                    <h4>Ph.D. in Civil Engineering</h4>
+                    <p><b>Duration:</b> Varies (4-5 years)<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>A Master’s degree in Civil Engineering or related field.</li><br>
+                            <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                            <li>Some institutions may require a qualifying score in entrance exams like <b>GATE/UGC NET</b>.</li>
+                        </ul>
+                    </p>
+                </li>     
+                <li>
+                    <h4>Integrated B.tech + M.tech</h4>
+                    <p><b>Duration:</b> 5 years<br><br>
+                        <b>Eligibility:</b><br>
+                        <ul>
+                            <li>Completion of 10+2 or equivalent examination.</li><br>
+                            <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                            <li>A qualifying score in entrance exams like <b>JEE</b>.</li>
+                        </ul>
+                    </p>
+                </li>  
+                <li>
+                    <h4>Certifications(6 months-1 year)</h4>
+                    <ul style="font-style: italic">
+                        <li>Certificate in Construction Methodology Basics in Civil Engineering</li><br>
+                        <li>Certificate in QA/QC Course for Civil Engineers</li><br>
+                        <li>Certificate in Fluid Mechanics</li><br>
+                        <li>Certificate in Design of Steel Structures</li><br>
+                        <li>Certificate in Foundation Engineering</li><br>
+                        <li>Certificate in ICE Courses</li><br>
+                        <li>Certificate in Numerical Methods In Civil Engineering</li><br>
+                        <li>Certificate in  Master Study in Project Management With BIM Technology</li>
+                    </ul>
+                </li>       
+            </ol>
+            <h2>Salary Expectations</h2>
+            <ul style="text-align: left">
+                <li><b>Freshers (0-2 years of experience):</b> ₹3 lakh to ₹6 lakh per annum</li><br>
+                <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 lakh to ₹12 lakh per annum</li><br>
+                <li><b>Experienced Architects (8+ years of experience):</b> ₹12 lakh per annum or higher</li>
+            </ul>
+            <h2>Top Institutes</h2>
+            <ul style="text-align:left" class="links">
+                <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+                <li><a href="https://home.iitd.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Delhi</a></li><br>
+                <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Madras</a></li>
+            </ul>
+            <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+            
+        </div>
+
+        <div id="course2" class="course">
+        <h1>Mechanical Engineering</h1>
+        <p>Mechanical Engineering is a branch of engineering that deals with the design, manufacture, and maintenance of mechanical systems. These systems involve the use of energy and force to operate and perform tasks in different applications, such as vehicles, machines, and tools. Mechanical engineers are responsible for designing machines, systems, and devices to improve productivity, efficiency, and safety. They use principles from physics, materials science, and other engineering disciplines to design and develop machines and systems that function as intended.Mechanical engineers have a wide range of career opportunities in industries such as manufacturing, aerospace, automotive, energy, and medical devices. They play a vital role in developing and improving technology in these industries by designing innovative products, developing new materials, and improving manufacturing processes. </p>
+        <img src="https://miro.medium.com/v2/resize:fit:701/1*frWwnBa4uRMSBGwl_WIuPw.jpeg" alt="Course 1" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Mechanical Engineering</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or diplomo.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>Comed-K</b> or <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Mechanical Engineering</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Mechanical Engineering</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>GATE</b>  or <b>GMAT</b></li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Mechanical Engineering</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Mechanical Engineering</h4>
+                <p><b>Duration:</b> Varies (4-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Mechanical Engineering or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li>Some institutions may require a qualifying score in entrance exams like <b>GATE/UGC NET</b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                <h4>Integrated B.tech + M.tech</h4>
+                <p><b>Duration:</b> 5 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>  
+            <li>
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li>Certificate in Certified SolidWorks Professional (CSWP)</li><br>
+                    <li>Certificate in Lean Six Sigma Green Belt</li><br>
+                    <li>Certificate in Certified HVAC Designer (CHD)</li><br>
+                    <li>Certificate in Certified Reliability Engineer (CRE) </li><br>
+                    <li>Certificate in Project Management Professional (PMP)</li><br>
+                    <li>Certificate in Manufacturing Engineer (CMfgE)</li><br>
+                    <li>Certificate in Professional Engineer (PE) License</li>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 lakh to ₹6 lakh per annum</li><br>
+            <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 lakh to ₹12 lakh per annum</li><br>
+            <li><b>Experienced Architects (8+ years of experience):</b> ₹12 lakh to ₹20 lakh per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left" class="links">
+            <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+            <li><a href="https://home.iitd.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Delhi</a></li><br>
+            <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Madras</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        
+        </div>
+    
+        <div id="course3" class="course">
+        <h1>Electrical Engineering</h1>
+        <p>Electrical Engineering in a Nutshell: Electrical engineering is all about electricity—whether it’s the intricate components inside your smartphone or the massive power grids that keep cities humming. As an electrical engineer, you’ll dance with electrons, tackle circuits, and unravel the mysteries of electromagnetic fields. In college, you’ll wade through math and physics classes (don’t worry, it’s not as shocking as it sounds). And once you’re out in the real world, you’ll find electrical engineers tinkering with everything from computer hardware to automotive systems to telecommunication networks.</p>
+        <img src="https://th.bing.com/th/id/OIP.zVonIohCEQX2KCcs8b7KkwHaDV?rs=1&pid=ImgDetMain" alt="Course 1" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Electrical Engineering</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or diplomo.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>Comed-K</b> or <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Electrical Engineering</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Electrical Engineering</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>GATE</b>  or <b>GMAT</b></li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Electrical Engineering</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Electrical Engineering</h4>
+                <p><b>Duration:</b> Varies (4-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Electrical Engineering or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li>Some institutions may require a qualifying score in entrance exams like <b>GATE/UGC NET</b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                <h4>Integrated B.tech + M.tech</h4>
+                <p><b>Duration:</b> 5 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>  
+            <li>
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li>Certificate in Automation Professional (CAP)</li><br>
+                    <li>Certificate in Electrical Safety Worker (CESW)</li><br>
+                    <li>Certificate in Electrical Safety Compliance Professional (CESCP)</li><br>
+                    <li>Certificate in Reliability Engineer (CRE)</li><br>
+                    <li>Certificate in Power Systems Engineer (PSE)</li><br>
+                    <li>Certificate in Control Systems Technician (CCST)</li><br>
+                    <li>Certificate in Energy Manager (CEM)</li>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 lakh to ₹6 lakh per annum</li><br>
+            <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 lakh to ₹12 lakh per annum</li><br>
+            <li><b>Experienced Architects (8+ years of experience):</b> ₹12 lakh to ₹20 lakh per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left" class="links">
+            <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+            <li><a href="https://home.iitd.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Delhi</a></li><br>
+            <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Madras</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        
+        </div>
+
+        <div id="course4" class="course">
+        <h1>Chemical Engineering</h1>
+        <p>Chemical engineering involves designing, optimizing, and operating processes that transform raw materials into valuable products. It combines principles from chemistry, physics, biology, and mathematics to develop efficient and sustainable solutions in industries such as pharmaceuticals, energy, food, and environmental protection. Chemical engineers work on processes like chemical reactions, heat transfer, fluid dynamics, and material science to create products ranging from fuels and plastics to medications and clean water. They also focus on improving safety, reducing waste, and minimizing environmental impact, playing a crucial role in advancing technology and addressing global challenges.</p>
+        <img src="https://college4u.in/wp-content/uploads/2019/04/chemical-830x346.jpg" alt="Course 1" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Chemical Engineering</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or diplomo.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>Comed-K</b> or <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Chemical Engineering</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Chemical Engineering</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>GATE</b>  or <b>GMAT</b></li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Chemical Engineering</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Chemical Engineering</h4>
+                <p><b>Duration:</b> Varies (4-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Chemical Engineering or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li>Some institutions may require a qualifying score in entrance exams like <b>GATE</b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                <h4>Integrated B.tech + M.tech</h4>
+                <p><b>Duration:</b> 5 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>  
+            <li>
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li>Certificate in Six Sigma Certification</li><br>
+                    <li>Certificate in Energy Manager</li><br>
+                    <li>Certificate in Process Safety Management (PSM)</li><br>
+                    <li>Certificate in Lean Manufacturing  </li><br>
+                    <li>Certificate in Hazard Analysis and Critical Control Points (HACCP) </li><br>
+                    <li>Certificate in Certified Chemical Engineer (CCE)</li><br>
+                    <li>Certificate in Professional Engineer (PE) License</li>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3 lakh to ₹6 lakh per annum</li><br>
+            <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 lakh to ₹12 lakh per annum</li><br>
+            <li><b>Experienced Architects (8+ years of experience):</b> ₹12 lakh per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left" class="links">
+            <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+            <li><a href="https://home.iitd.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Delhi</a></li><br>
+            <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Madras</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        
+        </div>
+
+        <div id="course5" class="course">
+        <h1>Aerospace Engineering</h1>
+        <p>Aerospace engineering is a field focused on the design, development, testing, and production of aircraft, spacecraft, and related systems and equipment. It combines elements of mechanical, electrical, and materials engineering to create vehicles that operate within Earth's atmosphere and beyond. Aerospace engineers work on innovations like propulsion systems, avionics, aerodynamics, and structural design. This discipline is critical for advancing air travel, space exploration, and defense systems. Professionals in this field contribute to projects ranging from commercial aircraft and satellites to rockets and space missions, ensuring safety, efficiency, and cutting-edge technology in aerospace ventures.</p>
+        <img src="https://cbjets.com/wp-content/uploads/2022/01/technical-oversite.jpg" alt="Course 1" class="course-image">
+        <h2>Courses</h2>
+        <ol style="text-align: left;">
+            <li>
+                <h4>Bachelor of Aerospace Engineering</h4>
+                <p><b>Duration:</b> 4 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or diplomo.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>Comed-K</b> or <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>
+            <li>
+                <h4>Master of Aerospace Engineering</h4>
+                <p><b>Duration:</b> 2 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A recognized Bachelor’s degree in Aerospace Engineering</li><br>
+                        <li>Minimum aggregate marks of 50% (may vary by institution).</li><br>
+                        <li>Some institutions may require a valid <b>GATE</b>  or <b>GMAT</b></li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Diploma in Aerospace Engineering</h4>
+                <p><b>Duration:</b> 3 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10th grade with at least 50% marks (may vary by institution).</li>
+                    </ul>
+                </p>
+            </li>    
+            <li>
+                <h4>Ph.D. in Aerospace Engineering</h4>
+                <p><b>Duration:</b> Varies (4-5 years)<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>A Master’s degree in Aerospace Engineering or related field.</li><br>
+                        <li>Minimum aggregate marks of 55% (may vary by institution).</li><br>
+                        <li>Some institutions may require a qualifying score in entrance exams like <b>GATE</b>.</li>
+                    </ul>
+                </p>
+            </li>     
+            <li>
+                <h4>Integrated B.tech + M.tech</h4>
+                <p><b>Duration:</b> 5 years<br><br>
+                    <b>Eligibility:</b><br>
+                    <ul>
+                        <li>Completion of 10+2 or equivalent examination.</li><br>
+                        <li>Minimum aggregate marks of 50% in 10+2 (may vary by institution).</li><br>
+                        <li>A qualifying score in entrance exams like <b>JEE</b>.</li>
+                    </ul>
+                </p>
+            </li>  
+            <li>
+                <h4>Certifications(6 months-1 year)</h4>
+                <ul style="font-style: italic">
+                    <li>Certificate in Certified Aerospace Engineer (CAE)</li><br>
+                    <li>Certificate in Six Sigma</li><br>
+                    <li>Certificate in ISO 9001</li><br>
+                    <li>Certificate in CATIA </li><br>
+                    <li>Certificate in Project Management Professional (PMP)</li><br>
+                    <li>Certificate in Certified Aerospace Technician (CAT)</li><br>
+                    <li>Certificate in ANSYS</li>
+                </ul>
+            </li>       
+        </ol>
+        <h2>Salary Expectations</h2>
+        <ul style="text-align: left">
+            <li><b>Freshers (0-2 years of experience):</b> ₹3.5 lakh to ₹6 lakh per annum</li><br>
+            <li><b>Mid-Level Architects (3-7 years of experience):</b> ₹6 lakh to ₹17 lakh per annum</li><br>
+            <li><b>Experienced Architects (8+ years of experience):</b> ₹19 lakh per annum or higher</li>
+        </ul>
+        <h2>Top Institutes</h2>
+        <ul style="text-align:left" class="links">
+            <li><a href="https://www.iitb.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Bombay</a></li><br>
+            <li><a href="https://www.iitk.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Kanpur</a></li><br>
+            <li><a href="https://www.iitm.ac.in/" style="color:blue">Indian Institute of Technology (IIT) Madras</a></li>
+        </ul>
+        <a href="https://www.shiksha.com/" class="button"><i>For more information...</i></a>
+        
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const content = document.getElementById('content');
+            menu.classList.toggle('show');
+            if (menu.classList.contains('show')) {
+                content.classList.add('with-menu');
+            } else {
+                content.classList.remove('with-menu');
+            }
+        }
+
+        function showCourse(courseId) {
+            document.querySelectorAll('.course').forEach(course => {
+                course.classList.remove('active');
+            });
+            document.getElementById(courseId).classList.add('active');
+            document.getElementById('welcome').style.display = 'none';
+            const menu = document.getElementById('menu');
+            if (menu.classList.contains('show')) {
+                toggleMenu();
+            }
+        }
+
+        document.querySelectorAll('.course').forEach(course => {
+            course.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
